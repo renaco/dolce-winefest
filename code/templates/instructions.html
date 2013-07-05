@@ -1,0 +1,131 @@
+{% extends "base_fblogin.html" %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+<div class="row" id="instrucctions">
+    <div class="large-10 columns text-center">
+        <p>&nbsp;</p>
+        <h2>Instrucciones</h2>
+        <p>Memoriza la combinación correcta para preparar cada café<br> <b>Dolce Gusto</b><sup>®</sup>. Luego responde las tres preguntas.</p>
+        <p>&nbsp;</p>
+    </div>
+
+        <div class="row">
+            <div class="large-11 columns large-centered">
+                <div class="row">
+                    <div class="large-10 columns borders">
+
+                        <div class="row">
+                            <div class="small-3 columns bdb bdr">
+                                <p><b>Cappuccino</b></p>
+                                <span class="capsule cap_one"></span>
+                                <span class="capsule cap_two"></span>
+                            </div>
+                            <div class="small-3 columns bdb bdr">
+                                <p><b>Chococino</b></p>
+                                <span class="capsule cap_three"></span> <br>
+                                <span class="capsule cap_four"></span>
+                            </div>
+                            <div class="small-3 columns bdb bdr">
+                                <p><b>Espresso</b></p>
+                                <span class="capsule cap_five"></span>
+                            </div>
+                            <div class="small-3 columns bdb">
+                                <p><b>Caramel Latte <br>
+                                    Macchiato</b></p>
+                                <span class="capsule cap_six"></span>
+                                <span class="capsule cap_seven"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="small-3 columns bdr">
+                                <p><b>Latte <br>Macchiato</b></p>
+                                <span class="capsule cap_eight"></span><br>
+                                <span class="capsule cap_nine"></span>
+                            </div>
+                            <div class="small-3 columns bdr">
+                                <p><b>Lungo <br>
+                                    Descafeinado</b></p>
+                                <span class="capsule cap_ten"></span>
+                            </div>
+                            <div class="small-3 columns bdr">
+                                <p><b>Lungo</b></p>
+                                <span class="capsule cap_eleven"></span>
+                            </div>
+                            <div class="small-3 columns">
+                                <p><b>Cappuccino <br>Skinny</b></p>
+                                <span class="capsule cap_twelve"></span>
+                                <span class="capsule cap_thirteen"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="columns large-2 right">
+                        <div class="row">
+                            <div class="large-6 columns large-centered">
+                                <!--<div class="timer">
+									<canvas id="timerCircle1" class="timerCircle" width="58" height="58"></canvas>
+                                    <span class="magenta">30</span>
+                                </div>-->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="large-9 columns large-centered">
+                                <p class="posboton">
+									
+                                    <a id="btn_jugar" href="{{ url_for('game') }}" class="btn_jugar"
+                                       onclick="_gaq.push(['_trackEvent','Diapadre-Conversion','Iniciar-Instrucciones', 'Boton-jugar'])">
+                                        <span>
+                                            <b>Jugar</b>
+                                        </span>
+                                    </a>
+									
+                                </p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+            <div class="row" id="footer_instructions">
+                <div class="large-11 columns large-centered">
+                    <i class="icon_focus"></i>
+                    <p class="grey">La cápsula blanca contiene leche.</p>
+                    <p class="grey">La cápsula de leche siempre se coloca primero.</p>
+
+                </div>
+            </div>
+
+        </div>
+
+</div>
+{% endblock content %}
+
+
+{% block scripts %}
+
+	 <script type="text/javascript">
+
+        jQuery(window).load(function(){         
+			<!--dolcePapa.activarTiempo(30, $(".timer .magenta"), function(complete){_gaq.push(['_trackEvent','Diapadre-Conversion', 'Iniciar-Instrucciones', 'Timer']);location.href="{{ url_for('game') }}";});	-->
+			
+			
+			
+			
+			jQuery("#btn_jugar").click(function(e){
+				$(this).parent().empty().append('<span class="btn_jugar btn_jugar_off"><span>Jugar</span></span>');
+			});
+        });
+		
+		
+
+    </script>
+{% endblock scripts %}

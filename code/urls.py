@@ -1,0 +1,16 @@
+from controllers import user, game
+import views
+
+
+def app_register_routes(app):
+
+    app.add_url_rule('/', view_func=views.Home.as_view('home'))
+    app.add_url_rule('/user/validator', view_func=user.Validator.as_view('user_validator'))
+    app.add_url_rule('/game', view_func=game.Game.as_view('game'))
+    app.add_url_rule('/form', view_func=user.Register.as_view('form'))
+    app.add_url_rule('/terms', view_func=views.Terms.as_view('terms'))
+    app.add_url_rule('/retry', view_func=views.Retry.as_view('retry'))
+    app.add_url_rule('/thanks', view_func=views.Thanks.as_view('thanks'))
+    app.add_url_rule('/winners', view_func=views.Winners.as_view('winners'))
+    app.add_url_rule('/nofan', view_func=views.NoFan.as_view('nofan'))
+    app.add_url_rule('/instructions',view_func=views.Instructions.as_view('instructions'))

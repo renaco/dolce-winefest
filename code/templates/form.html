@@ -1,0 +1,57 @@
+{% extends "base_fblogin.html" %}
+
+{% block content %}
+<div class="txt_logo bebas request text-center">
+                <span>Descubre el</span>
+                <small> Dolce placer</small>
+                <big> de vivir </big>
+                <p>a Gusto en el WineFest.</p>
+            </div>
+            <div class="formulario request"></div>
+            <form action="" class="custom">
+                <div class="cont_form request">
+                    <label>nombre Y APELLIDO</label>
+                    <input type="text" placeholder="Nombre" class="name"/>
+                    <input type="text" placeholder="Apellidos" class="name"/>
+                    <label>DNI</label>
+                    <input type="text" placeholder="Dni" class="dni"/>
+                    <label>Email</label>
+                    <input type="text" placeholder="Email" class="email"/>
+                    <label>ubicación</label>
+                    <select name="place" id="place">
+                        <option value="">Lima</option>
+                        <option value="">Lima</option>
+                        <option value="">Lima</option>
+                    </select>
+                    <div class="campo">
+                                            <div id="check_info">
+                                                <label for="info" class="check_box"><input tabindex=15 type="checkbox" id="info" name="reply_email" style="display: none;">
+                                                    <span class="custom checkbox"></span>
+                                                    <span class="arial">Quiero recibir más noticias sobre Nescafé<sup>&reg;</sup> Dolce Gusto<sup>&reg;</sup></span>
+                                                </label>
+                                            </div>
+                                            <div id="check_tyc">
+                                                <label for="tyc" class="check_box"><input tabindex=14 type="checkbox" id="tyc" name="tyc" style="display: none;">
+                                                    <span class="custom checkbox"></span>
+                                                    <span class="arial">He leído y acepto los </span><a
+                                                            href="{{ url_for('terms') }}" id="lnk_terminos"
+                                                            onclick="_gaq.push(['_trackEvent','Diapadre-Informativas', 'Terminos-y-Condiciones-Ver', ''])">Términos
+                                                        y Condiciones</a>
+                                                </label>
+                                            </div>
+
+                                        </div>
+                </div>
+                <a class="btns btn_enviar request" href="#"></a>
+            </form>
+
+{% endblock %}
+
+{% block scripts_formulario %}
+    <script src="{{ url_for('static', filename='js/jquery.validate.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.alphanumeric.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/foundation/foundation.forms.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/valid.js') }}"></script>
+
+
+{% endblock %}

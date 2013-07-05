@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" xmlns="https://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" xmlns="https://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" xmlns="https://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" xmlns="https://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml"> <!--<![endif]-->
+
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{% endblock title %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/foundation.css') }}" />
+    <!--[if IE 8]>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/ie8-grid-foundation-4.css') }}" />
+    <![endif]-->
+    <script src="{{ url_for('static', filename='js/vendor/custom.modernizr.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.jscrollpane.css') }}" />
+    <style type="text/css">
+            /* Styles specific to this particular page */
+        body {background: url("{{ url_for('static',filename='img/bg_terminos.png') }}") 0 0 repeat;}
+        .scroll-pane
+        {
+            width: 725px;
+            height: 680px;
+            overflow: auto;
+            margin: 43px 0 0 22px;
+        }
+        .horizontal-only
+        {
+            height: auto;
+            max-height: 200px;
+        }
+    </style>
+    <script>
+        document.write('<script src=' +
+                ('__proto__' in {} ? '{{ url_for("static", filename="js/vendor/jquery") }}' : '{{ url_for("static", filename="js/vendor/jquery") }}') + '.js><\/script>')
+    </script>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-39434613-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+<body>
+<div class="terminos" id="terms">
+
+    <div id="wrapp">
+
+        <h2 class="left">Términos y Condiciones</h2>
+
+        <div class="btn_regresar right" onclick="_gaq.push(['_trackEvent','Diapadre-Informativas', 'Terminos-y-Condiciones-Regresar', ''])">REGRESAR</div>
+        <div class="clear"></div>
+
+        <div class="cont_terminos scroll-pane">
+
+            <h3>1. Duración de la promoción</h3>
+
+            <p>Fecha de inicio: 10 de junio de 2013<br>
+                Fecha de finalización: 16 de junio de 2013</p>
+
+            <h3>2. Mecanismo y condiciones de la promoción</h3>
+
+            <p>El usuario o participante en esta promoción deberá ser necesariamente usuario de Facebook y, además,
+                deberá ser obligatoriamente Fan de la página de Facebook de Nescafé Dolce Gusto Perú
+                (<a href="https://www.facebook.com/NescafePeru" target="_blank">https://www.facebook.com/NescafePeru</a>). <br>
+                Para participar en el concurso, el usuario deberá ingresar, durante el plazo de vigencia de la
+                promoción, a dicha página y utilizar la aplicación, para lo cual deberá aceptar los siguientes permisos:
+            </p>
+            <ul>
+                <li>Publicar a nombre del usuario</li>
+                <li>Al ingresar a la aplicación, se le presentará al usuario el premio por el que concursará: Un Ipad
+                    Mini y una cafetera Dolce Gusto
+                </li>
+                <li>A continuación, el concursante deberá llenar sus datos en un formulario básico y sólo así podrá
+                    empezar con el flujo de la aplicación.
+                </li>
+                <li>Antes de empezar a jugar se le mostrarán las instrucciones  del juego, que deberá seguir para poder
+                    aplicar al sorteo
+                </li>
+                <li>La aplicación le presentará 3 preguntas, sobre cómo preparar uno de las 8 variedades de café.</li>
+                <li>Por último, para poder participar en el sorteo de Dolce Gusto, el usuario deberá necesariamente
+                    completar el formulario de registro con sus datos de contacto, aceptar los Términos y condiciones
+                    del concurso y haber logrado contestar correctamente las 3 preguntas.
+                </li>
+                <li>El sorteo se realizará el lunes 17 de junio de 2013 y el ganador se publicará el mismo lunes 17 de
+                    junio de 2013 a través de una Pestaña en la página de Nescafé Dolce Gusto Perú en Facebook.
+                </li>
+            </ul>
+            <p>El concurso tiene las siguientes reglas:</p>
+            <ul>
+                <li>Un mismo participante sólo podrá jugar una vez.</li>
+                <li>Serán descalificados del concurso los usuarios ficticios, empresas, marcas, usuarios con
+                    sobrenombres o cualquiera que intente transgredir las reglas dispuestas para este concurso.
+                </li>
+                <li>Los participantes deben ser personas mayores de edad, peruanos o extranjeros que tengan condición de
+                    residente en territorio peruano.
+                </li>
+                <li>Residentes en Lima</li>
+            </ul>
+            <h3>3. Sobre el sorteo</h3>
+
+            <p>El sorteo se realizará el día 17 de junio de 2013 a las 17hrs. en nuestras oficinas de la calle Federico
+                Villareal N°128, Miraflores, en presencia de un representante del Ministerio del Interior y un notario
+                público quien dará fe del hecho.<br>
+                La comunicación del ganador se realizará a través del muro de Nescafé Dolce Gusto Perú el día 17 de
+                junio de 2013. Además, se hará una notificación personal a la cuenta de correo que proporcione el
+                ganador, el día de la publicación del post.<br>
+                El ganador deberá presentarse con su DNI a la entrega del premio. En caso el ganador no se encuentre en
+                Lima y/o no pueda recoger el premio personalmente, deberá designar a un representante con carta poder
+                simple, adjuntando copia de su DNI.</p>
+
+            <h3>4. Premio del concurso</h3>
+
+            <p>El premio consiste en:<br>
+                Ipad Mini<br>
+                1 cafetera Nescafé Dolce Gusto </p>
+        </div>
+    </div>
+    <footer></footer>
+</div>
+    <script src="{{ url_for('static', filename='js/foundation.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/jquery.jscrollpane.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/jquery.mousewheel.js') }}"></script>
+    <!--[if IE 8]>
+		<script src="{{ url_for('static', filename='js/respond.src.js') }}"></script>
+	<![endif]-->
+
+    <script>
+        $(document).foundation();
+
+        $(function()
+        {
+            $('.scroll-pane').jScrollPane({
+                verticalDragMinHeight: 40,
+                verticalDragMaxHeight: 42
+            });
+
+            $(".btn_regresar").click(function(e){
+                var arrFrames = parent.$("iframe#term");
+                arrFrames.animate({
+                    opacity: 0,
+                    left: '-810px'
+                }, 500, function() {
+                    // Animation complete.
+                });
+            });
+
+        });
+
+    </script>
+    {% block scripts_validacion %}{% endblock scripts_validacion %}
+    {% block scripts_formulario %}{% endblock scripts_formulario %}
+    {% block scripts_drag %}{% endblock scripts_drag %}
+</body>
+</html>

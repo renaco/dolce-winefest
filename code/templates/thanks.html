@@ -1,0 +1,61 @@
+{% extends "base_fblogin.html" %}
+
+{% block content %}
+<div id="paso-finalizar" class="wrap-paso view_winner">
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="row">
+                <div class="columns large-5 ">
+                    <div class="winer"></div>
+                </div>
+                <div class="columns large-7 cont-listo">
+
+                    <div class="row" id="tasas">
+                        {% for result in results %}
+                        <div class="column small-4">
+                            <span class="good"><i id="prod_{{ result.product_id }}"></i></span>
+                            <p>{{ result.name }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <p></p>
+                    <h2 class="orange">¡Listo!</h2>
+                    <h3>Ya estás participando</h3>
+                    <p>del sorteo de una extraordinaria máquina <b>NESCAFÉ
+                    Dolce Gusto<sup>®</sup></b> y un <b>iPad mini</b>.</p>
+                    <a href="" class="btn_compartir" onclick="_gaq.push(['_trackEvent','Diapadre-Social', 'Compartir-Facebook', ''])"> <span>compartir&nbsp;&nbsp;</span></a>
+                    <a href="http://www.facebook.com/NescafeDolceGustoPeru" class="btn_normal" target="_parent" onclick="_gaq.push(['_trackEvent','Diapadre-Conversion', 'Seccion-Finalizar', ''])">Finalizar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block scripts_formulario %}
+    <script src="{{ url_for('static', filename='js/jquery.validate.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.alphanumeric.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/foundation/foundation.forms.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/valid.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            
+           $('.btn_compartir span').click(function(e){
+                    e.preventDefault();
+                    var img = "{{ DOMAIN_URL }}{{ url_for('static', filename='img/90x90.jpg') }}";
+                    FB.ui({
+                            method: 'feed',
+                            name: 'El regalo perfecto a la medida de papá',
+                            link: 'http://www.facebook.com/NescafeDolceGustoPeru/app_129567663916076',
+                            picture: img,
+                            description: 'Tú también juega para participar del sorteo de una extraordinaria máquina Nescafé Dolce Gusto y un iPad Mini.',
+                            message: ''
+                    });		
+                    return false;
+            });
+                        
+        });
+    </script>
+
+{% endblock %}

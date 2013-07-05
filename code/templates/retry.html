@@ -1,0 +1,46 @@
+{% extends "base_fblogin.html" %}
+
+{% block content %}
+<div id="paso-finalizar" class="wrap-paso view_loser">
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="columns large-5">
+                    <div class="loser"></div>
+            </div>
+            <div class="columns large-7 cont-listo">
+
+                <h4>Inténtalo <br>
+                    nuevamente.</h4>
+
+                <div class="mt23 row" id="tasas">
+                    {% for result in results %}
+                    <div class="column small-4">
+                        <span class="{{ result.result }}"><i id="prod_{{ result.product_id }}"></i></span>
+
+                        <p>{{ result.name }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="mensaje_respuesta_incorrecta">
+                    <p>Tienes que preparar correctamente los 3 cafés para poder
+                    participar de nuestro sorteo.</p>
+                    <p>No te desanimes, vuelve a intentarlo</p>
+                </div>
+
+                <a href="{{ url_for('instructions') }}" class="btn_volverempezar" onclick="_gaq.push(['_trackEvent','Diapadre-Conversion', 'Seccion-Volver-A-Jugar', ''])"><span>VOLVER A EMPEZAR</span></a>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock content %}
+{% block scripts %}
+
+
+{% endblock scripts %}
+

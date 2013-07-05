@@ -1,0 +1,58 @@
+{% extends "base_fblogin.html" %}
+{% block title %}Home{% endblock title %}
+
+{% block classHeader %}header_home{% endblock classHeader %}
+
+{% block extra_fbscripts %}
+<script xmlns="https://www.w3.org/1999/html">
+        function login() {
+            //_gaq.push(['_trackEvent','Iniciar', 'Jugar', '']);
+            FB.login(function(response) {
+                if (response.authResponse) {
+                    // connected
+                    _gaq.push(['_trackEvent','Diapadre-Conversion','Iniciar-Home', '']);
+                    window.location = '{{ redirect_if_logged }}';
+                } else {
+                    // cancelled
+                }
+            },{scope: 'email,publish_actions'
+        });
+
+        }
+    </script>
+{% endblock extra_fbscripts %}
+{% block carga %}style="left:810px;"{% endblock carga %}
+{% block content %}
+
+<div class="cont_home">
+    <p class="brown_two text-left">Juega y participa para ganar una
+        extraordinaria máquina <b>NESCAFÉ</b><sup>®</sup> <b>Dolce Gusto</b><sup>®</sup> <br>y un <b>iPad mini</b>.</p>
+    <a class="btn_empezar right unnconect" href="#" onclick="login();"><span>regístrate <br> aquí</span></a>
+    <a class="btn_empezar right connect" href="#" onclick="login();"><span>Empezar</span></a>
+    <div class="cont_boton" style="display: none">Primero debes registrarte.</div>
+</div>
+<a class="btn_terminos" href="{{ url_for('terms') }}" onclick="_gaq.push(['_trackEvent','Diapadre-Informativas', 'Terminos-y-Condiciones-Ver', ''])">Términos & Condiciones</a>
+<img src="{{ url_for('static', filename='img/sprite.png') }}" width="1px" height="1px" class="oculto">
+<img src="{{ url_for('static', filename='img/sprite_bg.png') }}" width="1px" height="1px" class="oculto">
+<img src="{{ url_for('static', filename='img/sprite_img.png') }}" width="1px" height="1px" class="oculto">
+{% endblock content %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/jquery.queryloader2.js') }}"></script>
+<script>
+$(document).ready(function() {   
+    $("body").queryLoader2({
+        barColor: "#ff5734",
+        backgroundColor: "#ffffff",
+        percentage: true,
+        barHeight: 7,
+        completeAnimation: "grow",
+        minimumTime: 100
+    });
+});
+</script>
+
+{% endblock scripts %}
+
+
+
+

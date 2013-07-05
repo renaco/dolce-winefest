@@ -1,0 +1,8 @@
+<META>
+    <POLICY-REFERENCES>
+        <POLICY-REF about="/P3P/p3p.xml#policy1">
+            <INCLUDE>/</INCLUDE>
+            <COOKIE-INCLUDE/>
+        </POLICY-REF>
+    </POLICY-REFERENCES>
+</META>

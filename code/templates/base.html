@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" xmlns="https://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" xmlns="https://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" xmlns="https://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" xmlns="https://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}{% endblock title %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/foundation.css') }}" />
+
+
+
+    <!--[if IE 8]>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/ie8-grid-foundation-4.css') }}" />
+    <![endif]-->
+    <script src="{{ url_for('static', filename='js/vendor/custom.modernizr.js') }}"></script>
+
+
+    <!--[if IE 8]>
+		<script src="{{ url_for('static', filename='js/respond.src.js') }}"></script>
+	<![endif]-->
+    <script>
+        document.write('<script src=' +
+                ('__proto__' in {} ? '{{ url_for('static', filename='js/vendor/jquery') }}' : '{{ url_for('static', filename='js/vendor/jquery') }}') +
+                '.js><\/script>')
+    </script>
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-39434613-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+
+
+
+<body>
+    {% block top_scripts %}{% endblock top_scripts %}
+    <div class="main" {% block carga %}{% endblock carga %}>
+        <div class="row">
+            <div class="large-12">
+                <div class="header request"></div>
+                {% block content %}{% endblock content %}
+                <div class="footer request"></div>
+            </div>
+		</div>
+	</div>
+
+    <iframe class="contTerminos" id="term" style="display: none;"></iframe>
+
+    <script src="{{ url_for('static', filename='js/foundation.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/init.js') }}"></script>
+
+
+    <script>
+        $(document).foundation();
+    </script>
+    {% block scripts_validacion %}{% endblock scripts_validacion %}
+    {% block scripts %}{% endblock scripts %}
+    {% block scripts_formulario %}{% endblock scripts_formulario %}
+    {% block scripts_juego %}{% endblock scripts_juego %}
+</body>
+</html>

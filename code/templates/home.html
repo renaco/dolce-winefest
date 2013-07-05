@@ -1,0 +1,64 @@
+{% extends "base_fblogin.html" %}
+{% block title %}Home{% endblock title %}
+
+{% block classHeader %}header_home{% endblock classHeader %}
+
+{% block extra_fbscripts %}
+<script xmlns="https://www.w3.org/1999/html">
+        function login() {
+            //_gaq.push(['_trackEvent','Iniciar', 'Jugar', '']);
+            FB.login(function(response) {
+                if (response.authResponse) {
+                    // connected
+                    _gaq.push(['_trackEvent','Diapadre-Conversion','Iniciar-Home', '']);
+                    window.location = '{{ redirect_if_logged }}';
+                } else {
+                    // cancelled
+                }
+            },{scope: 'email,publish_actions'
+        });
+
+        }
+    </script>
+{% endblock extra_fbscripts %}
+{% block carga %}style="left:810px;"{% endblock carga %}
+{% block content %}
+
+            <div class="txt_logo bebas request text-center">
+                <span>Descubre el</span>
+                <small> Dolce placer</small>
+                <big> de vivir </big>
+                <p>a Gusto en el WineFest.</p>
+            </div>
+            <div class="descubre request"></div>
+            <form action="">
+                <div class="bg_radious">
+                    <textarea name="" id="" placeholder="140 Caracteres..." ></textarea>
+                </div>
+                <a class="btns btn_enviar request" href="{{ url_for('form') }}"></a>
+            </form>
+    
+<img src="{{ url_for('static', filename='img/sprite.png') }}" width="1px" height="1px" class="oculto">
+<img src="{{ url_for('static', filename='img/sprite_bg.png') }}" width="1px" height="1px" class="oculto">
+<img src="{{ url_for('static', filename='img/sprite_img.png') }}" width="1px" height="1px" class="oculto">
+{% endblock content %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/jquery.queryloader2.js') }}"></script>
+<script>
+$(document).ready(function() {   
+    $("body").queryLoader2({
+        barColor: "#ff5734",
+        backgroundColor: "#ffffff",
+        percentage: true,
+        barHeight: 7,
+        completeAnimation: "grow",
+        minimumTime: 100
+    });
+});
+</script>
+
+{% endblock scripts %}
+
+
+
+
