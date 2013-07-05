@@ -11,7 +11,7 @@ body {
 
 body {
   background: white;
-  color: #a77a5d;
+  color: #b77b5b;
   padding: 0;
   margin: 0;
   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -1510,9 +1510,10 @@ form.custom .custom {
   border: 2px solid #c5c5c5;
   background: white; }
   form.custom .custom.checkbox {
-    -webkit-border-radius: 0px;
-    border-radius: 0px;
-    padding: -1px; }
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding: -1px;
+    margin-right: 7px; }
   form.custom .custom.radio {
     -webkit-border-radius: 1000px;
     border-radius: 1000px;

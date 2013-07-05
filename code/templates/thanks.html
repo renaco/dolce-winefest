@@ -1,36 +1,18 @@
 {% extends "base_fblogin.html" %}
 
 {% block content %}
-<div id="paso-finalizar" class="wrap-paso view_winner">
-    <div class="row">
-        <div class="large-12 columns">
-            <div class="row">
-                <div class="columns large-5 ">
-                    <div class="winer"></div>
-                </div>
-                <div class="columns large-7 cont-listo">
+    <div class="big_text">
+        <div class="txt_logo bebas request text-center">
+            <span>Descubre el</span>
+            <small> Dolce placer</small>
+            <big> de vivir </big>
 
-                    <div class="row" id="tasas">
-                        {% for result in results %}
-                        <div class="column small-4">
-                            <span class="good"><i id="prod_{{ result.product_id }}"></i></span>
-                            <p>{{ result.name }}</p>
-                        </div>
-                        {% endfor %}
-                    </div>
-                    <p></p>
-                    <h2 class="orange">¡Listo!</h2>
-                    <h3>Ya estás participando</h3>
-                    <p>del sorteo de una extraordinaria máquina <b>NESCAFÉ
-                    Dolce Gusto<sup>®</sup></b> y un <b>iPad mini</b>.</p>
-                    <a href="" class="btn_compartir" onclick="_gaq.push(['_trackEvent','Diapadre-Social', 'Compartir-Facebook', ''])"> <span>compartir&nbsp;&nbsp;</span></a>
-                    <a href="http://www.facebook.com/NescafeDolceGustoPeru" class="btn_normal" target="_parent" onclick="_gaq.push(['_trackEvent','Diapadre-Conversion', 'Seccion-Finalizar', ''])">Finalizar</a>
-                </div>
-            </div>
+            <p>a Gusto en el WineFest.</p>
         </div>
     </div>
 
-</div>
+    <div class="thanks request"></div>
+
 {% endblock %}
 
 {% block scripts_formulario %}

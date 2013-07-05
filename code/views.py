@@ -65,25 +65,9 @@ class Retry(MethodView, RequestHandler):
 
 class Thanks(MethodView, RequestHandler):
 
-    @authenticated
     def get(self):
-
-        results = []
-        result_id = request.args.get('result')
-        result = _result(result_id, self.current_user.id)
-
-        if not result:
-            return redirect(url_for('home'))
-
-        for result in result.results.split():
-            pid = result.split(':')[0]
-            product = Product.query.filter_by(id=pid).first()
-            results.append({'product_id': str(pid).zfill(2),
-                            'name': product.name})
-
         return self.render_template('thanks.html',
-                                    title='Gracias',
-                                    results=results)
+                                    title='Gracias',)
 
 
 class Winners(MethodView, RequestHandler):

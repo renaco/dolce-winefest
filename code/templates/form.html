@@ -8,7 +8,7 @@
                 <p>a Gusto en el WineFest.</p>
             </div>
             <div class="formulario request"></div>
-            <form action="" class="custom">
+            <form action="" class="custom" id="form_registro">
                 <div class="cont_form request">
                     <label>nombre Y APELLIDO</label>
                     <input type="text" placeholder="Nombre" class="name"/>
@@ -27,7 +27,7 @@
                                             <div id="check_info">
                                                 <label for="info" class="check_box"><input tabindex=15 type="checkbox" id="info" name="reply_email" style="display: none;">
                                                     <span class="custom checkbox"></span>
-                                                    <span class="arial">Quiero recibir más noticias sobre Nescafé<sup>&reg;</sup> Dolce Gusto<sup>&reg;</sup></span>
+                                                    <span class="arial">Quiero recibir más noticias sobre Nescafé</span>
                                                 </label>
                                             </div>
                                             <div id="check_tyc">
@@ -35,14 +35,13 @@
                                                     <span class="custom checkbox"></span>
                                                     <span class="arial">He leído y acepto los </span><a
                                                             href="{{ url_for('terms') }}" id="lnk_terminos"
-                                                            onclick="_gaq.push(['_trackEvent','Diapadre-Informativas', 'Terminos-y-Condiciones-Ver', ''])">Términos
-                                                        y Condiciones</a>
+                                                            onclick="_gaq.push(['_trackEvent','Diapadre-Informativas', 'Terminos-y-Condiciones-Ver', ''])">Términos y Condiciones</a>
                                                 </label>
                                             </div>
 
                                         </div>
                 </div>
-                <a class="btns btn_enviar request" href="#"></a>
+                <a class="btns btn_participar request" href="{{ url_for('thanks') }}"></a>
             </form>
 
 {% endblock %}
