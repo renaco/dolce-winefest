@@ -23,7 +23,7 @@ def crypt_password(password):
 
 class SystemUser(UserMixin, Base):
 
-    __tablename__ = "users"
+    __tablename__ = "system_users"
     __table_args__ = {
         'mysql_engine': 'InnoDB',
         'mysql_charset': 'utf8'
