@@ -49,7 +49,7 @@ input:-ms-placeholder {
 .bebas {font-family: 'BebasNeueRegular';}
 
 .txt_logo {color: #4d210c; width: 186px; border-top: 5px solid #693d0d; border-bottom: 5px solid #693d0d;background-image: none;}
-.txt_logo span {display: block;font-size: 45.66px;line-height: 0.6em;padding-top: 0.2em; margin-bottom: -0.3em;}
+.txt_logo span {display: block;font-size: 45.66px;line-height: 0.6em;padding-top: 0.2em; }
 .txt_logo small {color: #c25d2d;font-size: 40.99px;line-height: 1em;}
 .txt_logo big {color: #c25d2d;font-size: 72.08px;line-height: 0.65em;}
 .txt_logo p {font-size: 23.95px;line-height: 0.9em;}
@@ -100,6 +100,15 @@ input:-ms-placeholder {
 .dni {background-position: 5px -361px;}
 .email {background-position: 5px -388px;}
 .place {background-position: 5px -508px;}
+label.error {
+    margin-top: 3px;
+    position: absolute;
+    left: 554px;
+    width: 27px;
+    height: 27px;
+    text-indent: -9999px;
+    background: url("../img/sprite.png") 0 -295px no-repeat;
+    float: right;}
 
 /****************global********************************/
 .campo { width: 110%;}
