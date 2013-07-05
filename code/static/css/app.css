@@ -49,7 +49,7 @@ input:-ms-placeholder {
 .bebas {font-family: 'BebasNeueRegular';}
 
 .txt_logo {color: #4d210c; width: 186px; border-top: 5px solid #693d0d; border-bottom: 5px solid #693d0d;background-image: none;}
-.txt_logo span {display: block;font-size: 45.66px;line-height: 0.6em;padding-top: 0.2em;}
+.txt_logo span {display: block;font-size: 45.66px;line-height: 0.6em;padding-top: 0.2em; margin-bottom: -0.3em;}
 .txt_logo small {color: #c25d2d;font-size: 40.99px;line-height: 1em;}
 .txt_logo big {color: #c25d2d;font-size: 72.08px;line-height: 0.65em;}
 .txt_logo p {font-size: 23.95px;line-height: 0.9em;}
@@ -72,7 +72,9 @@ input:-ms-placeholder {
 .btn_enviar:hover {background-position: 0 -54px;}
 .btn_participar {margin-top: 30px; background-position: 0 -108px; }
 .btn_participar:hover { background-position: 0 -162px; }
-
+.btn_participar_off { background-position: 0 -216px;
+    position: relative;
+    top: -53px;}
 .formulario {background-image: url("../img/formulario.png");width: 574px;height: 42px;margin-top: 32px}
 .cont_form {width: 284px;background-image: none;}
 .cont_form input,

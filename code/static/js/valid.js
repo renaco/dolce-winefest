@@ -101,12 +101,12 @@ $(document).ready(function() {
         });
     }
 
-	$(".btn_registrate").click(function(e) {
+	$(".btn_participar").click(function(e) {
         e.preventDefault();
 		if ($("#form_registro").valid() == true) {	
             var url = "user/validator";
-            $(".btn_registrate").css("display","none"); 
-            $(".btn_registrate_off").css("display","table"); 
+            $(".btn_participar").css("display","none");
+            $(".btn_participar_off").css("display","table");
             $.ajax({
                 type: 'POST',
                 url: url,
@@ -125,8 +125,8 @@ $(document).ready(function() {
                             $("#" + arr[i]).parent().find(".lblerror").css("display","block");
 
                         }
-                        $(".btn_registrate").css("display","table"); 
-                        $(".btn_registrate_off").css("display","none"); 
+                        $(".btn_participar").css("display","table");
+                        $(".btn_participar_off").css("display","none");
                     }
                 }
             });
