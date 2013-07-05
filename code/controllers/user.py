@@ -1,3 +1,4 @@
+import logging
 import settings
 
 from flask.views import MethodView
@@ -5,12 +6,10 @@ from flask import request, redirect, url_for
 
 from models import User, Department
 from controllers import (RequestHandler,
-                         generate_csrf_token, csrf_protect, logger)
+                         generate_csrf_token, csrf_protect)
 
 from database import db_session
 from forms import RegisterForm
-
-logger = logger(__name__)
 
 
 class Register(MethodView, RequestHandler):
@@ -43,7 +42,7 @@ class Register(MethodView, RequestHandler):
             try:
                 db_session.commit()
             except Exception as exc:
-                logger.error(exc)
+                logging.error(exc)
                 db_session.rollback()
                 db_session.remove()
                 self.get()
@@ -51,7 +50,7 @@ class Register(MethodView, RequestHandler):
                 db_session.remove()
                 return redirect(url_for('thanks'))
         else:
-            logger.error(form.errors)
+            logging.error(form.errors)
             return self.get()
 
 
