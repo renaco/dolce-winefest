@@ -15,7 +15,6 @@ from forms import RegisterForm
 class Register(MethodView, RequestHandler):
 
     def get(self):
-
         data = {'title': 'Formulario',
                 'departments': Department.query.all()}
         if settings.XSRF_COOKIES:
@@ -25,7 +24,6 @@ class Register(MethodView, RequestHandler):
     def post(self):
         if settings.XSRF_COOKIES:
             csrf_protect()
-
         form = RegisterForm(request.form)
         form.email_exists.data = bool(User.query.filter_by(
             email=form.email.data).count())

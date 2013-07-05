@@ -31,7 +31,9 @@
                 <p>a Gusto en el WineFest.</p>
             </div>
             <div class="descubre request"></div>
-            <form action="">
+            <form action="{{ url_for('add_comment') }}" id="formComment" method="post">
+                <input type="text" name="_csrf_token" value="{{ csrf_token }}">
+
                 <div class="bg_radious">
                     <textarea name="" id="" placeholder="140 Caracteres..." ></textarea>
                 </div>
@@ -45,7 +47,12 @@
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/jquery.queryloader2.js') }}"></script>
 <script>
-$(document).ready(function() {   
+    $(document).ready(function() {   
+
+    $('#btn_submit').click(function() {
+      $('#formComment').submit();
+    });
+
     $("body").queryLoader2({
         barColor: "#ff5734",
         backgroundColor: "#ffffff",

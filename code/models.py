@@ -178,6 +178,11 @@ class User(Base):
         backref="users"
     )
 
+    comment = db.Column(
+        db.UnicodeText(),
+        nullable=True
+    )
+
     def __unicode__(self):
         return '%s %s' % (
             self.first_name,

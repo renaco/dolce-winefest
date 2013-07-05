@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from wtforms.fields import TextField, BooleanField, PasswordField
-from wtforms import Form, validators
+from wtforms import Form
 
 from wtforms.validators import (Required, ValidationError, Email, Length)
 
@@ -30,9 +30,6 @@ class RegisterForm(Form):
         validators=[Required(), Length(2, 40)]
     )
 
-    phone = TextField('Telefono',
-                      validators=[validators.Length(min=7, max=9)])
-
     email = TextField(
         label='E-mail',
         validators=[
@@ -42,6 +39,11 @@ class RegisterForm(Form):
                 max=50,
             )
         ]
+    )
+
+    comment = TextField(
+        label='Comment',
+        validators=[Required(), Length(1, 140)]
     )
 
     cod_dpto = QuerySelectField(get_label='Departamento')
