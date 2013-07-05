@@ -98,3 +98,5 @@ input:-ms-placeholder {
 .place {background-position: 5px -508px;}
 
 /****************global********************************/
+
+#form_registro .campo .row, #form_registro #check_info,#form_registro #check_tyc {    position: relative;}
