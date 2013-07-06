@@ -1,5 +1,6 @@
 import uuid
 import settings
+import logging
 
 from functools import wraps
 
@@ -19,8 +20,15 @@ def nocomment(f):
 
 def csrf_protect(action=''):
     if request.method == "POST":
+
+        print session
+
         token = session.pop('%s_csrf_token' % action, None)
+
+        print token
+
         if not token or token != request.form.get('_csrf_token'):
+            logging.error('403')
             abort(403)
 
 
