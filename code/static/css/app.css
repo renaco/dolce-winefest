@@ -80,6 +80,7 @@ input:-ms-placeholder {
 .txt_logo p {font-size: 23.95px;line-height: 0.9em;}
 .bg_radious textarea {
     text-transform: uppercase;
+    padding: 7px 12px;
     margin: 22px auto 23px !important;
     font-weight: bold;
     font-size: 10.96px;
