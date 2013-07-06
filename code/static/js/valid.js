@@ -24,9 +24,12 @@ $(document).ready(function() {
 				required : true,
 				email : true
 			},
-			place : {
+			departamento : {
 				required : true
 			},
+            reply_email : {
+                required:true
+            },
 			tyc : {
 				required : true
 			}
@@ -52,9 +55,12 @@ $(document).ready(function() {
 				required : "x",
 				email : "x"
 			},
-			place : {
+			departamento : {
 				required : "x"
 			},
+            reply_email : {
+                required : "x"
+            },
 			tyc : {
 				required : "x"
 			}
