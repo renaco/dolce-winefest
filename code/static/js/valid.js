@@ -24,7 +24,7 @@ $(document).ready(function() {
 				required : true,
 				email : true
 			},
-			cod_dpto : {
+			place : {
 				required : true
 			},
 			tyc : {
@@ -52,7 +52,7 @@ $(document).ready(function() {
 				required : "x",
 				email : "x"
 			},
-			cod_dpto : {
+			place : {
 				required : "x"
 			},
 			tyc : {
