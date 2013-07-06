@@ -12,7 +12,7 @@ $(document).ready(function() {
 				required : true
 			},
 
-			numdoc : {
+			dni : {
 				required : true,
 				minlength : 7
 			},
@@ -43,7 +43,7 @@ $(document).ready(function() {
 				required : "x"
 			},
 
-			numdoc : {
+			dni : {
 				required : "x",
 				minlength : "x"
 			},
@@ -112,7 +112,7 @@ $(document).ready(function() {
 		if ($("#form_registro").valid() == true) {	
             var url = "user/validator";
             $(".btn_participar").css("display","none");
-            $(".btn_participar_off").css("display","table");
+            $(".btn_participar_off").css("display","block");
             $.ajax({
                 type: 'GET',
                 url: url,
