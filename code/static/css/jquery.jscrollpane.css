@@ -55,13 +55,14 @@
 
 .jspTrack
 {
-	background: transparent url("../img/jspTrack.png") center 0 repeat-y;
+	background: transparent url("../img/bg_scroll.png") center 0 repeat-y;
 	position: relative;
 }
 
-.jspDrag
+.jspDrag,
+.jspDrag:hover
 {
-	background: transparent url("../img/sprite.png") 0 -1100px no-repeat;
+	background: transparent url("../img/sprite.png") -174px -440px no-repeat;
 	position: relative;
 	top: 0;
 	left: 0;
@@ -69,10 +70,10 @@
     width: 40px;
     height: 41px;
 }
-.jspDrag:hover {
+/*.jspDrag:hover {
     background-position: -44px -1100px;}
 .jspDrag:active {
-    background-position: -87px -1100px;}
+    background-position: -87px -1100px;}*/
 .jspHorizontalBar .jspTrack,
 .jspHorizontalBar .jspDrag
 {
