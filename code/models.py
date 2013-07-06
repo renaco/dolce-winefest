@@ -127,7 +127,8 @@ class User(Base):
     dni = db.Column(
         db.Unicode(8),
         nullable=True,
-        index=True
+        index=True,
+        unique=True
     )
 
     email = db.Column(
