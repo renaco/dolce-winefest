@@ -37,7 +37,7 @@
                 <div class="bg_radious">
                     <textarea name="comment" id="" placeholder="140 Caracteres..." ></textarea>
                 </div>
-                <a class="btns btn_enviar request" href="{{ url_for('form') }}"></a>
+                <a class="btns btn_enviar request" id="btn_submit" href="javascript:;"></a>
             </form>
     
 <img src="{{ url_for('static', filename='img/sprite.png') }}" width="1px" height="1px" class="oculto">
@@ -46,11 +46,13 @@
 {% endblock content %}
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/jquery.queryloader2.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.validate.js') }}"></script>
 <script>
     $(document).ready(function() {   
 
     $('#btn_submit').click(function(e) {
         e.preventDefault();
+        alert("envia comentario")
       $('#formComment').submit();
     });
 
@@ -61,6 +63,24 @@
         barHeight: 7,
         completeAnimation: "grow",
         minimumTime: 100
+    });
+
+        $('#formComment').validate({
+        rules: {
+
+            message: {
+                minlength: 8,
+                required: true
+            }
+        },
+        highlight: function(small) {
+            $(small).closest(".val").addClass('red');
+        },
+        success: function(label) {
+            label
+            .text('OK!').addClass('valid')
+            .closest(".val").addClass('success');
+        }
     });
 });
 </script>
