@@ -2,12 +2,20 @@ import settings
 
 from flask.views import MethodView
 from controllers import (RequestHandler,
-                         generate_csrf_token)
+                         generate_csrf_token,
+                         session)
 
 
 class Home(MethodView, RequestHandler):
 
     def post(self):
+
+        if 'user_id' in session:
+            session.pop('user_id')
+
+        if 'comment' in session:
+            session.pop('comment')
+
         data = {}
         if settings.XSRF_COOKIES:
             data['csrf_token'] = generate_csrf_token('home')
