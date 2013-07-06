@@ -34,3 +34,4 @@ nosetests.xml
 .project
 .pydevproject
 .idea/
+code/local_settings.py

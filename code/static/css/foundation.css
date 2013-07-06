@@ -1472,8 +1472,7 @@ fieldset {
 input.error,
 .error textarea,
 textarea.error {
-  border-color: #c60f13;
-  background-color: rgba(198, 15, 19, 0.1); }
+  color: #c60f13;}
   .error input:focus,
   input.error:focus,
   .error textarea:focus,
