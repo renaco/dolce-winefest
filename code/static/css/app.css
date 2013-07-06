@@ -275,6 +275,19 @@ form.custom .custom.checkbox.checked {
     height: 139px;
     background: url("../img/bg_head.jpg");}
 
+.msj_error {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    margin: auto;
+    background-color: #d73315;
+    width: 100%;
+    font-size: 12px;}
+
 
 
 

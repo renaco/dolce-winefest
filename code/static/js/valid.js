@@ -111,8 +111,7 @@ $(document).ready(function() {
         e.preventDefault();
 		if ($("#form_registro").valid() == true) {	
             var url = "user/validator";
-            $(".btn_participar").css("display","none");
-            $(".btn_participar_off").css("display","block");
+
             $.ajax({
                 type: 'POST',
                 url: url,
@@ -125,6 +124,10 @@ $(document).ready(function() {
                         //var dni = $("#numdoc").val();
                         //_gaq.push(['_trackEvent', 'registro', 'registro',dni ]);
                         document.forms["form_registro"].submit();
+
+                        $(".btn_participar").css("display", "none");
+                        $(".btn_participar_off").css("display", "block");
+
                     }else{
                     	var arr = html.split('|');
                         for (var i = 0; i<=(arr.length)-1; i++)
@@ -132,8 +135,13 @@ $(document).ready(function() {
                             //alert(arr[i]);
                             $("#" + arr[i]).addClass("error");
                         }
-                        $(".msj_error div div").css("display","block");
-                        $(".msj_error div div").html("Este DNI o correo ya están registrados.");
+
+                        /*$("input.dni").val(function (index, val) {
+                            return val + "Este DNI o correo ya están registrados.";
+                        });*/
+
+                        $(".msj_error").css("display","block");
+                        $(".msj_error").html("Este DNI o correo ya están registrados.");
                     }
                 }
             });
