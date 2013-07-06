@@ -13,7 +13,7 @@ class Add(MethodView, RequestHandler):
 
         if settings.XSRF_COOKIES:
             logging.error('not csrf_protect')
-            csrf_protect()
+            csrf_protect('home')
 
         comment = request.form['comment']
 

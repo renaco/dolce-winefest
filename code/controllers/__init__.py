@@ -5,18 +5,19 @@ from flask import (request, session, abort,
                    make_response, render_template)
 
 
-def csrf_protect():
+def csrf_protect(action=''):
     if request.method == "POST":
-        token = session.pop('_csrf_token', None)
+        token = session.pop('%s_csrf_token' % action, None)
         if not token or token != request.form.get('_csrf_token'):
             abort(403)
 
 
-def generate_csrf_token():
-    session['_csrf_token'] = '%s%s' % (
+def generate_csrf_token(action=''):
+    session['%s_csrf_token'] = '%s%s' % (
+        action,
         str(uuid.uuid4()),
         settings.COOKIE_SECRET)
-    return session['_csrf_token']
+    return session['%s_csrf_token' % action]
 
 
 class RequestHandler(object):

@@ -19,14 +19,14 @@ class Register(MethodView, RequestHandler):
             return redirect(url_for('home'))
         data = {'departments': Department.query.all()}
         if settings.XSRF_COOKIES:
-            data['csrf_token'] = generate_csrf_token()
+            data['csrf_token'] = generate_csrf_token('register')
         return self.render_template('form.html', **data)
 
     def post(self):
 
 
         if settings.XSRF_COOKIES:
-            csrf_protect()
+            csrf_protect('register')
         form = RegisterForm(request.form)
         form.email_exists.data = bool(User.query.filter_by(
             email=form.email.data).count())

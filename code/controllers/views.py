@@ -8,9 +8,9 @@ from controllers import (RequestHandler,
 class Home(MethodView, RequestHandler):
 
     def post(self):
-        data = {'title': 'Home'}
+        data = {}
         if settings.XSRF_COOKIES:
-            data['csrf_token'] = generate_csrf_token()
+            data['csrf_token'] = generate_csrf_token('home')
         return self.render_template('home.html', **data)
 
     def get(self):
