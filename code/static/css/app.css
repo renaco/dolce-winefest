@@ -229,18 +229,20 @@ form.custom .custom.checkbox.checked {
     color: #c25d2d;
     font-family: 'BebasNeueRegular'; }
 .terminos .btn_regresar {
-    text-indent: -9999px;
     background: transparent url("../img/sprite.png") -1px -1147px no-repeat;
-    border-radius: 27px;
-    -moz-border-radius: 27px;
-    -moz-border-radius: 27px;
+    width: 185px;
+	height: 39px;
+    line-height: 39px;
+    text-align: center;
+	-webkit-border-radius: 19px 20px 20px 19px/19px 19px 20px 20px;
+	-moz-border-radius: 19px 20px 20px 19px/19px 19px 20px 20px;
+	border-radius: 19px 20px 20px 19px/19px 19px 20px 20px;
+	background-color: #ff5926;
     color: #ffffff;
     cursor: pointer;
-    width: 54px;
-    height: 54px;
     position: relative;
-    top: -4px;
-    left: 17px;
+    top: 15px;
+    left: 4px;
 }
 .terminos .btn_regresar:hover {
     background-position: -59px -1147px;
