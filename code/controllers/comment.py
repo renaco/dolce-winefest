@@ -17,9 +17,6 @@ class Add(MethodView, RequestHandler):
 
         comment = request.form['comment']
 
-        print 'comment', comment
-
-
         if not comment:
             logging.error('not comment')
             return redirect(url_for('home'))

@@ -1,8 +1,20 @@
 import uuid
 import settings
 
+from functools import wraps
+
 from flask import (request, session, abort,
-                   make_response, render_template)
+                   make_response, render_template,
+                   redirect, url_for)
+
+
+def nocomment(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        if not 'comment' in session:
+            return redirect(url_for('home'))
+        return f(*args, **kwargs)
+    return decorated
 
 
 def csrf_protect(action=''):
