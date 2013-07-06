@@ -1,12 +1,13 @@
 import logging
 import settings
 
+
 from flask.views import MethodView
 from flask import request, redirect, url_for, session
 
 from models import User, Department
 from controllers import (RequestHandler,
-                         generate_csrf_token, csrf_protect)
+                         generate_csrf_token, csrf_protect, nocomment)
 
 from database import db_session
 from forms import RegisterForm
@@ -14,29 +15,28 @@ from forms import RegisterForm
 
 class Register(MethodView, RequestHandler):
 
+    @nocomment
     def get(self):
 
-        print session
-
-        if not 'comment' in session:
-            print "xxx"
-            return redirect(url_for('home'))
         data = {'departments': Department.query.all()}
         if settings.XSRF_COOKIES:
             data['csrf_token'] = generate_csrf_token('register')
+
         return self.render_template('form.html', **data)
 
+    @nocomment
     def post(self):
-
 
         if settings.XSRF_COOKIES:
             csrf_protect('register')
+
         form = RegisterForm(request.form)
         form.email_exists.data = bool(User.query.filter_by(
             email=form.email.data).count())
         form.dni_exists.data = bool(User.query.filter_by(
             dni=form.dni.data).count())
         form.cod_dpto.query = Department.query.all()
+        form.comment.data = session.pop('comment')
 
         if form.validate():
             user = User()
@@ -50,13 +50,13 @@ class Register(MethodView, RequestHandler):
                 logging.error(exc)
                 db_session.rollback()
                 db_session.remove()
-                return self.get()
+                return redirect(url_for('thanks'))
             else:
                 db_session.remove()
                 return redirect(url_for('thanks'))
         else:
             logging.error(form.errors)
-            return self.get()
+            return redirect(url_for('thanks'))
 
 
 class Validator(MethodView):
