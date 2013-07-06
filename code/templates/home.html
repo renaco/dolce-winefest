@@ -35,7 +35,7 @@
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token }}">
 
                 <div class="bg_radious">
-                    <textarea name="message" id="" placeholder="140 Caracteres..." ></textarea>
+                    <textarea name="comment" id="" placeholder="140 Caracteres..." ></textarea>
                 </div>
                 <a class="btns btn_enviar request" id="btn_submit" href="javascript:;"></a>
             </form>
@@ -50,6 +50,11 @@
 <script>
     $(document).ready(function() {
 
+    $('#btn_submit').click(function(e) {
+        e.preventDefault();
+      $('#formComment').submit();
+    });
+
         $("body").queryLoader2({
             barColor: "#ff5734",
             backgroundColor: "#ffffff",
@@ -57,17 +62,12 @@
             barHeight: 7,
             completeAnimation: "grow",
             minimumTime: 100
-        });
-
-    $('#btn_submit').click(function(e) {
-        e.preventDefault();
-      $('#formComment').submit();
     });
 
         $('#formComment').validate({
         rules: {
 
-            message: {
+            comment: {
                 minlength: 8,
                 required: true
             }

@@ -120,9 +120,6 @@ $(document).ready(function() {
 
                     if(html == "")
                     {
-                        //alert('ola');
-                        //var dni = $("#numdoc").val();
-                        //_gaq.push(['_trackEvent', 'registro', 'registro',dni ]);
                         document.forms["form_registro"].submit();
 
                         $(".btn_participar").css("display", "none");
@@ -136,9 +133,6 @@ $(document).ready(function() {
                             $("#" + arr[i]).addClass("error");
                         }
 
-                        /*$("input.dni").val(function (index, val) {
-                            return val + "Este DNI o correo ya están registrados.";
-                        });*/
 
                         $(".msj_error").css("display","block");
                         $(".msj_error").html("Este DNI o correo ya están registrados.");
