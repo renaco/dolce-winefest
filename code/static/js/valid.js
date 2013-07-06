@@ -24,7 +24,7 @@ $(document).ready(function() {
 				required : true,
 				email : true
 			},
-			departamento : {
+			place : {
 				required : true
 			},
             reply_email : {
@@ -55,7 +55,7 @@ $(document).ready(function() {
 				required : "x",
 				email : "x"
 			},
-			departamento : {
+			place : {
 				required : "x"
 			},
             reply_email : {
