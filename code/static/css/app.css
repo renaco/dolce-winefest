@@ -72,9 +72,7 @@ input:-ms-placeholder {
 .btn_enviar:hover {background-position: 0 -54px;}
 .btn_participar { background-position: 0 -108px; }
 .btn_participar:hover { background-position: 0 -162px; }
-.btn_participar_off { background-position: 0 -216px;
-    position: relative;
-    top: -53px;}
+.btn_participar_off { background-position: 0 -216px; position: relative;}
 .btn_ingresar { height: 54px; background-position: 0 -518px; margin-top: 5px; margin-bottom: 20px;}
 .btn_ingresar:hover { background-position: 0 -572px;}
 .formulario {background-image: url("../img/formulario.png");width: 574px;height: 42px;margin-top: 32px}
