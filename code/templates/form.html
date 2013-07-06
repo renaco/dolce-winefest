@@ -14,32 +14,31 @@
                     <input type="text" placeholder="Nombre" class="name" name="first_name" id="first_name" tabindex=1/>
                     <input type="text" placeholder="Apellidos" class="name" name="last_name" id="last_name" tabindex=2/>
                     <label>DNI</label>
-                    <input type="text" placeholder="Dni" class="dni" name="dni" id="dni" maxlength="8" tabindex=3/>
+                    <input type="text" placeholder="Dni" class="dni numero" name="dni" id="dni" maxlength="8" tabindex=3/>
                     <label>Email</label>
-                    <input type="text" placeholder="Email" class="email" tabindex=4/>
+                    <input type="text" placeholder="Email" class="email texto" tabindex=4/>
                     <label>ubicación</label>
                     <select name="place" id="place">
                         <option value="">Lima</option>
                         <option value="">Lima</option>
                         <option value="">Lima</option>
                     </select>
-                    <div class="campo">
-                                            <div id="check_info">
-                                                <label for="info" class="check_box"><input tabindex=15 type="checkbox" id="info" name="reply_email" style="display: none;">
-                                                    <span class="custom checkbox"></span>
-                                                    <span class="arial">Quiero recibir más noticias sobre Nescafé</span>
-                                                </label>
-                                            </div>
-                                            <div id="check_tyc">
-                                                <label for="tyc" class="check_box"><input tabindex=14 type="checkbox" id="tyc" name="tyc" style="display: none;">
-                                                    <span class="custom checkbox"></span>
-                                                    <span class="arial">He leído y acepto los </span><a
-                                                            href="{{ url_for('terms') }}" id="lnk_terminos"
-                                                            onclick="_gaq.push(['_trackEvent','Diapadre-Informativas', 'Terminos-y-Condiciones-Ver', ''])">Términos y Condiciones</a>
-                                                </label>
-                                            </div>
 
-                                        </div>
+                    <div class="campo">
+                        <div id="check_info">
+                            <label for="info" class="check_box"><input tabindex=15 type="checkbox" id="info" name="reply_email" style="display: none;">
+                                <span class="custom checkbox"></span>
+                                <span class="arial">Quiero recibir más noticias sobre Nescafé</span>
+                            </label>
+                        </div>
+                        <div id="check_tyc">
+                            <label for="tyc" class="check_box"><input tabindex=14 type="checkbox" id="tyc" name="tyc" style="display: none;">
+                                <span class="custom checkbox"></span>
+                                <span class="arial">He leído y acepto los </span><a href="{{ url_for('terms') }}" id="lnk_terminos" onclick="_gaq.push(['_trackEvent','Diapadre-Informativas', 'Terminos-y-Condiciones-Ver', ''])">Términos y Condiciones</a>
+                            </label>
+                        </div>
+
+                    </div>
                 </div>
                 <a class="btns btn_participar request" href="{{ url_for('thanks') }}"></a>
                 <span class="btns btn_participar_off request" style="display: none;" </span>
@@ -52,6 +51,18 @@
     <script src="{{ url_for('static', filename='js/jquery.alphanumeric.js') }}"></script>
     <script src="{{ url_for('static', filename='js/foundation/foundation.forms.js') }}"></script>
     <script src="{{ url_for('static', filename='js/valid.js') }}"></script>
+
+    <script type="text/javascript">
+     $(document).ready(function() {
+
+        $('#btn_participar').click(function(e) {
+            e.preventDefault();
+            alert("gsdgsdgsd d")
+          $('#form_registro').submit();
+        });
+
+    });
+    </script>
 
 
 {% endblock %}
