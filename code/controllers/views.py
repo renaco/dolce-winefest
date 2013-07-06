@@ -2,7 +2,7 @@ import settings
 
 from flask.views import MethodView
 from controllers import (RequestHandler,
-                         generate_csrf_token, session)
+                         generate_csrf_token)
 
 
 class Home(MethodView, RequestHandler):
@@ -11,10 +11,6 @@ class Home(MethodView, RequestHandler):
         data = {}
         if settings.XSRF_COOKIES:
             data['csrf_token'] = generate_csrf_token('home')
-
-
-        print session
-
         return self.render_template('home.html', **data)
 
     def get(self):
