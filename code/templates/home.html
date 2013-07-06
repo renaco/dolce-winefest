@@ -35,7 +35,7 @@
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token }}">
 
                 <div class="bg_radious">
-                    <textarea name="comment" id="" placeholder="140 Caracteres..." ></textarea>
+                    <textarea name="message" id="" placeholder="140 Caracteres..." ></textarea>
                 </div>
                 <a class="btns btn_enviar request" id="btn_submit" href="javascript:;"></a>
             </form>
@@ -48,20 +48,20 @@
 <script src="{{ url_for('static', filename='js/jquery.queryloader2.js') }}"></script>
 <script src="{{ url_for('static', filename='js/jquery.validate.js') }}"></script>
 <script>
-    $(document).ready(function() {   
+    $(document).ready(function() {
+
+        $("body").queryLoader2({
+            barColor: "#ff5734",
+            backgroundColor: "#ffffff",
+            percentage: true,
+            barHeight: 7,
+            completeAnimation: "grow",
+            minimumTime: 100
+        });
 
     $('#btn_submit').click(function(e) {
         e.preventDefault();
       $('#formComment').submit();
-    });
-
-    $("body").queryLoader2({
-        barColor: "#ff5734",
-        backgroundColor: "#ffffff",
-        percentage: true,
-        barHeight: 7,
-        completeAnimation: "grow",
-        minimumTime: 100
     });
 
         $('#formComment').validate({

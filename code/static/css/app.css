@@ -41,6 +41,31 @@ input:-ms-placeholder {
 .clear {clear: both}
 .dno{display: none;}
 .bdtted { border: 1px dotted;}
+
+/**************cargador*******************/
+#qLoverlay{
+    background-image: url(../img/load.gif);
+    background-repeat: no-repeat;
+    background-position: center 50px;
+}
+#qLpercentage{
+    font-size: 18px;
+    color: #71512e;
+    font-weight:700;
+    font-family:Arial;
+ }
+
+#cont_bar{
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    background-color: #fff;
+    height: 1px;
+    margin-top: 100px;
+}
+.oculto{position:absolute; top:-10000px; left:-10000px;}
 /***** app *****/
 .header {background-image: url("../img/header.jpg");height: 179px;width: 808px;margin-bottom: 13px;}
 .footer {background-image: url("../img/bg_footer.png");height: 107px;}
