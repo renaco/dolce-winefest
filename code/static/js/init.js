@@ -1,8 +1,6 @@
 $(document).ready(function(){
 
-    $('input, textarea').placeholder();
-
-    $("#lnk_terminos, .btn_terminos").click(function(e){
+    $("#lnk_terminos").click(function(e){
         e.preventDefault();
         //alert("asdasda");
         var url = $(this).attr("href");
