@@ -114,13 +114,14 @@ $(document).ready(function() {
             $(".btn_participar").css("display","none");
             $(".btn_participar_off").css("display","block");
             $.ajax({
-                type: 'GET',
+                type: 'POST',
                 url: url,
                 data: {dni:$("#numdoc").val(), email:$("#email").val()},
                 success: function(html) {
 
                     if(html == "")
                     {
+                        //alert('ola');
                         //var dni = $("#numdoc").val();
                         //_gaq.push(['_trackEvent', 'registro', 'registro',dni ]);
                         document.forms["form_registro"].submit();
