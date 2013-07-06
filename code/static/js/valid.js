@@ -24,7 +24,7 @@ $(document).ready(function() {
 				required : true,
 				email : true
 			},
-			place : {
+			cod_dpto : {
 				required : true
 			},
             reply_email : {
@@ -55,7 +55,7 @@ $(document).ready(function() {
 				required : "x",
 				email : "x"
 			},
-			place : {
+			cod_dpto : {
 				required : "x"
 			},
             reply_email : {

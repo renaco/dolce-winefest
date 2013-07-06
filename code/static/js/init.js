@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+//    $()
+
     $("#lnk_terminos, .btn_terminos").click(function(e){
         e.preventDefault();
         //alert("asdasda");
