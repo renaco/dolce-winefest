@@ -37,7 +37,7 @@
                 <div class="bg_radious">
                     <textarea name="" id="" placeholder="140 Caracteres..." ></textarea>
                 </div>
-                <a class="btns btn_enviar request" href="javascript:;"></a>
+                <a class="btns btn_enviar request" id="btn_submit" href="javascript:;"></a>
             </form>
     
 <img src="{{ url_for('static', filename='img/sprite.png') }}" width="1px" height="1px" class="oculto">
@@ -52,10 +52,8 @@
 
     $('#btn_submit').click(function(e) {
         e.preventDefault();
-        if ($("#formComment").valid() == true) {
-            document.forms["formComment"].submit();
-        }
-{#      $('#formComment').submit();#}
+        alert("envia comentario")
+      $('#formComment').submit();
     });
 
     $("body").queryLoader2({
