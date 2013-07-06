@@ -49,6 +49,26 @@
 
 
 <body>
+<div id="fb-root"></div>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=102173753288107";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+        <script>
+        window.fbAsyncInit = function() {
+            FB.Canvas.setAutoGrow();
+        };
+        (function() {
+            var e = document.createElement('script');
+            e.async = true;
+            e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+            document.getElementById('fb-root').appendChild(e);
+        }());
+        </script>
     {% block top_scripts %}{% endblock top_scripts %}
     <div class="main" {% block carga %}{% endblock carga %}>
         <div class="row">
