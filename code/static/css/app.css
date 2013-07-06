@@ -152,9 +152,119 @@ form.custom .custom.checkbox.checked {
     margin: -7px auto 8px;}
 
 
+/************ terminos ************/
+.bloqueo{
+    position: absolute;
+    width: 100%;
+    height: 384px;
+    z-index: 99999;
+    display: none;
+}
+.contTerminos{
+    width: 810px;
+    height: 920px;
+    position: absolute;
+    top: 0;
+    left: -810px;
+    border: 0;
+    opacity: 0;
+    -moz-opacity: 0;
+    overflow: hidden;
+    filter:alpha(opacity=0);
+    z-index: 999999;
+}
+.opacidad{
+    opacity: .30;
+    -moz-opacity: .30;
+    filter:alpha(opacity=30);
+}
 
+.btn_terminos {
+    -webkit-border-radius: 10px/10px 10px 11px 11px;
+	-moz-border-radius: 10px/10px 10px 11px 11px;
+	border-radius: 10px/10px 10px 11px 11px;
+	background-color: rgba(221,221,221,0);
+	border: solid 1px rgba(113,81,46,.5);
+    color: inherit;
+    background: transparent none;
+    border: 1px solid #ab9f90;
+    margin-bottom: 10px;
+    display: block;
+    text-decoration: none;
+    font-size: 13px;
+    position:absolute;
+    bottom: 4px;
+    right: 146px;
+    z-index: 9;
+    line-height: 21px;
+    text-align: center;
+    width: 164px;
+    height: 21px;}
+.btn_terminos:hover {
+    /*font-size: 0.8em;*/
+    border: 1px solid #695233;
+    font-weight: 700;
+    color: #695233;
+}
 
+#terms footer {background: #f6f7f9 none;height: 82px;display: none;}
+#terms #wrapp {
+    border: 0 none;
+    height: 865px;
+    color: #ffffff;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    box-shadow: 0 0 0 0;
+    -moz-box-shadow: 0 0 0 0;
+    -webkit-box-shadow: 0 0 0 0;
+    padding: 37px 21px;
+    background: transparent;
+}
+#terms #wrapp h2 { font-size: 2.5em; }
+.terminos .btn_regresar {
+    text-indent: -9999px;
+    background: transparent url("../img/sprite.png") -1px -1147px no-repeat;
+    border-radius: 27px;
+    -moz-border-radius: 27px;
+    -moz-border-radius: 27px;
+    color: #ffffff;
+    cursor: pointer;
+    width: 54px;
+    height: 54px;
+    position: relative;
+    top: -4px;
+    left: 17px;
+}
+.terminos .btn_regresar:hover {
+    background-position: -59px -1147px;
+}
 
+#wrapp .cont_terminos p, #wrapp .cont_terminos li {
+    font-weight: normal;
+    color: #ffffff;
+    line-height: 1.2em;
+    padding: 0 0 0.7em;
+    font-size: 15px;}
+#wrapp .cont_terminos ul {
+    padding: 0;
+}
+#wrapp .cont_terminos li {
+    list-style: none;
+    padding: 0 0 0 37px;
+    background: url("../img/sprite.png") -20px -2737px no-repeat;}
+#wrapp .cont_terminos a {
+    text-decoration: underline;
+    color: inherit;}
+#wrapp .cont_terminos a:hover {
+    text-decoration: none;}
+#wrapp .cont_terminos h3 {
+    margin: 1.6em 0 0;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #4f3216;
+    line-height: 0.7em;
+}
 
 
 

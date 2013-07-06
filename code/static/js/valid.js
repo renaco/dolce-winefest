@@ -12,7 +12,7 @@ $(document).ready(function() {
 				required : true
 			},
 
-			dni : {
+			numdoc : {
 				required : true,
 				minlength : 7
 			},
@@ -43,7 +43,7 @@ $(document).ready(function() {
 				required : "x"
 			},
 
-			dni : {
+			numdoc : {
 				required : "x",
 				minlength : "x"
 			},
@@ -114,25 +114,25 @@ $(document).ready(function() {
             $(".btn_participar").css("display","none");
             $(".btn_participar_off").css("display","table");
             $.ajax({
-                type: 'POST',
+                type: 'GET',
                 url: url,
-                data: {dni:$("#dni").val(), email:$("#email").val()},
+                data: {dni:$("#numdoc").val(), email:$("#email").val()},
                 success: function(html) {
-                    
+
                     if(html == "")
                     {
-                        _gaq.push(['_trackEvent','Diapadre-Conversion','Registro', '']);
+                        var dni = $("#numdoc").val();
+                        _gaq.push(['_trackEvent', 'registro', 'registro',dni ]);
                         document.forms["form_registro"].submit();
                     }else{
                     	var arr = html.split('|');
                         for (var i = 0; i<=(arr.length)-1; i++)
                         {
+                            //alert(arr[i]);
                             $("#" + arr[i]).addClass("error");
-                            $("#" + arr[i]).parent().find(".lblerror").css("display","block");
-
                         }
-                        $(".btn_participar").css("display","table");
-                        $(".btn_participar_off").css("display","none");
+                        $(".msj_error div div").css("display","block");
+                        $(".msj_error div div").html("Este DNI o correo ya están registrados.");
                     }
                 }
             });
