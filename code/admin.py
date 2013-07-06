@@ -41,13 +41,15 @@ def render_large_template():
                     ))
 
 
+"""
 class LogoutView(BaseView):
 
     @expose('/')
     def index(self):
         session.pop('user_id')
         return redirect(settings.HOME_URL + 'admin/login')
-     
+"""
+
 class StatsView(BaseView):
 
     @expose('/')
@@ -72,7 +74,6 @@ class StatsView(BaseView):
         return self.render('admin/stats.html',
                            count=dict(users=users_count,
                            data=dict(users=_users,
-                           games=games,
                            )))
 
 
@@ -83,10 +84,12 @@ class DepartmentView(ModelView):
     def __init__(self, session, **kwargs):
         super(DepartmentView, self).__init__(Department, session, **kwargs)
 
+    """
     def is_accessible(self):
         if not 'user_id' in session:
             abort(401)
         return True
+    """
 
 class UserView(ModelView):
 
@@ -118,10 +121,12 @@ class UserView(ModelView):
     def __init__(self, session, **kwargs):
         super(UserView, self).__init__(User, session, **kwargs)
 
+    """
     def is_accessible(self):
         if not 'user_id' in session:
             abort(401)
         return True
+    """
 
 class UserExportView(BaseView):
     @expose('/')
@@ -221,13 +226,13 @@ def index():
 
 admin = Admin(app,
               name="PAPA EXTRAORDINARIO - DOLCE",
-              url='/',
+              #url='/',
               static_url_path='/static/')
 
 admin.add_view(UserView(db_session))
 admin.add_view(DepartmentView(db_session))
 admin.add_view(StatsView())
-admin.add_view(LogoutView())
+#admin.add_view(LogoutView())
 
 if __name__ == '__main__':
     app.run()
