@@ -121,8 +121,8 @@ $(document).ready(function() {
 
                     if(html == "")
                     {
-                        var dni = $("#numdoc").val();
-                        _gaq.push(['_trackEvent', 'registro', 'registro',dni ]);
+                        //var dni = $("#numdoc").val();
+                        //_gaq.push(['_trackEvent', 'registro', 'registro',dni ]);
                         document.forms["form_registro"].submit();
                     }else{
                     	var arr = html.split('|');

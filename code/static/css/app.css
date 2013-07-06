@@ -102,8 +102,8 @@ input:-ms-placeholder {
 .dni, .cont_form input.dni.error:focus {background-position: 5px -361px;}
 .email, .cont_form input.email.error:focus {background-position: 5px -388px;}
 .place, .cont_form input.place.error:focus {background-position: 5px -508px;}
-.cont_form input.error:focus {
-    background-image: url("../img/sprite.png");
+.cont_form input.error:focus, input:-webkit-autofill {
+    background-image: url("../img/sprite.png") !important;
     background-repeat: no-repeat;}
 label.error {
     margin-top: 3px;

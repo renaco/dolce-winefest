@@ -8,7 +8,7 @@
                 <p>a Gusto en el WineFest.</p>
             </div>
             <div class="formulario request"></div>
-            <form action="" class="custom" id="form_registro" method="post">
+            <form action="{{ url_for('thanks') }}" class="custom" id="form_registro" method="post">
 
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token }}">
 
@@ -46,7 +46,7 @@
 
                     </div>
                 </div>
-                <a class="btns btn_participar request" href="{{ url_for('thanks') }}" id="btn_participar"></a>
+                <a class="btns btn_participar request" href="" id="btn_participar"></a>
                 <span class="btns btn_participar_off request" style="display: none;"> </span>
             </form>
 
