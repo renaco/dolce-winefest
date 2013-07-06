@@ -2,7 +2,7 @@
 from wtforms.fields import TextField, BooleanField, PasswordField
 from wtforms import Form
 
-from wtforms.validators import (Required, ValidationError, Email, Length)
+from wtforms.validators import (Required, ValidationError, Email, Length, Optional)
 
 from wtforms.widgets.core import HiddenInput
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
@@ -43,7 +43,7 @@ class RegisterForm(Form):
 
     comment = TextField(
         label='Comment',
-        validators=[Required(), Length(1, 140)]
+        validators=[Optional(), Length(1, 140)]
     )
 
     cod_dpto = QuerySelectField(get_label='Departamento')
