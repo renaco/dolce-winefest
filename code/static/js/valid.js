@@ -27,6 +27,9 @@ $(document).ready(function() {
 			place : {
 				required : true
 			},
+            reply_email : {
+                required:true
+            },
 			tyc : {
 				required : true
 			}
@@ -55,6 +58,9 @@ $(document).ready(function() {
 			place : {
 				required : "x"
 			},
+            reply_email : {
+                required : "x"
+            },
 			tyc : {
 				required : "x"
 			}

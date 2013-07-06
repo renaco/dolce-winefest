@@ -96,10 +96,13 @@ input:-ms-placeholder {
     padding-left: 5px !important;}
 .cont_form select {padding-left: 0 !important;border: 2px solid #c5c5c5;}
 .cont_form label {font-size: 13.02px;color: #a77a5d;text-transform: uppercase;font-weight: bold;margin-top: 5px;}
-.name {background-position: 5px -326px;}
-.dni {background-position: 5px -361px;}
-.email {background-position: 5px -388px;}
-.place {background-position: 5px -508px;}
+.name, .cont_form input.name.error:focus { background-position: 5px -326px;}
+.dni, .cont_form input.dni.error:focus {background-position: 5px -361px;}
+.email, .cont_form input.email.error:focus {background-position: 5px -388px;}
+.place, .cont_form input.place.error:focus {background-position: 5px -508px;}
+.cont_form input.error:focus {
+    background-image: url("../img/sprite.png");
+    background-repeat: no-repeat;}
 label.error {
     margin-top: 3px;
     position: absolute;
@@ -123,6 +126,16 @@ label.error {
 #form_registro #check_tyc label.error, #form_registro #check_info label.error {
     display: none !important;}
 
+form.custom .custom.checkbox {
+    border: 2px solid #b0b0b0;
+    text-indent: -9999px;
+}
+form.custom .custom.checkbox.error {
+    border: 2px solid #e90303;
+}
+form.custom .custom.checkbox.checked {
+    border: 2px solid #b0b0b0;
+    background: url("../img/sprite.png") -2px -493px no-repeat;}
 #lnk_terminos {
     text-decoration: underline;
     color: #ff5734;}

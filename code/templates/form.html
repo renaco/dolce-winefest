@@ -16,23 +16,26 @@
                     <label>DNI</label>
                     <input type="text" placeholder="Dni" class="dni numero" name="dni" id="dni" maxlength="8" tabindex=3/>
                     <label>Email</label>
-                    <input type="text" placeholder="Email" class="email texto" tabindex=4/>
+                    <input type="text" placeholder="Email" class="email" name="email" id="email" tabindex=4/>
                     <label>ubicación</label>
-                    <select name="place" id="place">
+                    <select name="place" id="place" tabindex=5>
+                        <option value=""></option>
                         {% for x in departments %}
-                            <option value="{{ x.id }}">{{ x.name }}</option>
+                            <option value="{{ x.id }}" name="departamento" id="departamento">{{ x.name }}</option>
                         {% endfor %}
                     </select>
 
                     <div class="campo">
                         <div id="check_info">
-                            <label for="info" class="check_box"><input tabindex=15 type="checkbox" id="info" name="reply_email" style="display: none;">
+                            <label for="info" class="check_box">
+                                <input tabindex=6 type="checkbox" id="info" name="reply_email" style="display: none;">
                                 <span class="custom checkbox"></span>
                                 <span class="arial">Quiero recibir más noticias sobre Nescafé</span>
                             </label>
                         </div>
                         <div id="check_tyc">
-                            <label for="tyc" class="check_box"><input tabindex=14 type="checkbox" id="tyc" name="tyc" style="display: none;">
+                            <label for="tyc" class="check_box">
+                                <input tabindex=7 type="checkbox" id="tyc" name="tyc" style="display: none;">
                                 <span class="custom checkbox"></span>
                                 <span class="arial">He leído y acepto los </span><a href="{{ url_for('terms') }}" id="lnk_terminos" onclick="_gaq.push(['_trackEvent','Diapadre-Informativas', 'Terminos-y-Condiciones-Ver', ''])">Términos y Condiciones</a>
                             </label>
@@ -40,7 +43,7 @@
 
                     </div>
                 </div>
-                <a class="btns btn_participar request" href="{{ url_for('thanks') }}"></a>
+                <a class="btns btn_participar request" href="{{ url_for('thanks') }}" id="btn_participar"></a>
                 <span class="btns btn_participar_off request" style="display: none;" </span>
             </form>
 
@@ -57,7 +60,6 @@
 
         $('#btn_participar').click(function(e) {
             e.preventDefault();
-            alert("gsdgsdgsd d")
           $('#form_registro').submit();
         });
 
