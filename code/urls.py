@@ -35,3 +35,7 @@ def app_register_routes(app):
         '/nofan',
         view_func=views.NoFan.as_view('nofan')
     )
+    app.add_url_rule(
+        '/fan',
+        view_func=views.Fan.as_view('fan')
+    )

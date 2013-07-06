@@ -134,7 +134,9 @@ label.error {
     width: 549px;
     height: 162px;}
 
-
+.fan img {
+    display: block;
+    margin: -7px auto 8px;}
 
 
 
