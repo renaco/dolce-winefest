@@ -70,13 +70,14 @@ input:-ms-placeholder {
 .btns {width: 214px;height: 53px;background-image: url("../img/sprite.png");}
 .btn_enviar {background-position: 0 0;   width: 214px; height: 53px;}
 .btn_enviar:hover {background-position: 0 -54px;}
-.btn_participar {margin-top: 30px; background-position: 0 -108px; }
+.btn_participar { background-position: 0 -108px; }
 .btn_participar:hover { background-position: 0 -162px; }
 .btn_participar_off { background-position: 0 -216px;
     position: relative;
     top: -53px;}
 .formulario {background-image: url("../img/formulario.png");width: 574px;height: 42px;margin-top: 32px}
-.cont_form {width: 284px;background-image: none;}
+.cont_form {width: 284px;background-image: none;
+    margin-bottom: 30px;}
 .cont_form input,
 .cont_form .custom.dropdown {
     margin-top: 5px;
