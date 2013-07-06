@@ -13,8 +13,7 @@ def csrf_protect(action=''):
 
 
 def generate_csrf_token(action=''):
-    session['%s_csrf_token'] = '%s%s' % (
-        action,
+    session['%s_csrf_token' % action] = '%s%s' % (
         str(uuid.uuid4()),
         settings.COOKIE_SECRET)
     return session['%s_csrf_token' % action]

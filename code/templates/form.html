@@ -19,9 +19,9 @@
                     <input type="text" placeholder="Email" class="email texto" tabindex=4/>
                     <label>ubicación</label>
                     <select name="place" id="place">
-                        <option value="">Lima</option>
-                        <option value="">Lima</option>
-                        <option value="">Lima</option>
+                        {% for x in departments %}
+                            <option value="{{ x.id }}">{{ x.name }}</option>
+                        {% endfor %}
                     </select>
 
                     <div class="campo">

@@ -15,7 +15,11 @@ from forms import RegisterForm
 class Register(MethodView, RequestHandler):
 
     def get(self):
+
+        print session
+
         if not 'comment' in session:
+            print "xxx"
             return redirect(url_for('home'))
         data = {'departments': Department.query.all()}
         if settings.XSRF_COOKIES:

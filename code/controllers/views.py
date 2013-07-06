@@ -11,6 +11,7 @@ class Home(MethodView, RequestHandler):
         data = {}
         if settings.XSRF_COOKIES:
             data['csrf_token'] = generate_csrf_token('home')
+
         return self.render_template('home.html', **data)
 
     def get(self):
