@@ -73,8 +73,22 @@ input:-ms-placeholder {
 .descubre {background-image: url("../img/descubre.png");width: 597px;height: 112px;margin-top: 26px;}
 .bebas {font-family: 'BebasNeueRegular';}
 
-.txt_logo {color: #4d210c; width: 186px; border-top: 5px solid #693d0d; border-bottom: 5px solid #693d0d;background-image: none;}
-.txt_logo span {display: block;font-size: 45.66px;line-height: 0.6em;padding-top: 0.2em; }
+.txt_logo {
+    background-image: url("../img/cuadro_texto.png");
+    color: #4d210c;
+    width: 186px;
+    height: 165px;
+    /*border-top: 5px solid #693d0d;
+    border-bottom: 5px solid #693d0d;*/
+}
+
+.txt_logo span {
+    display: block;
+    font-size: 45.66px;
+    line-height: 4px;
+    padding-top: 0.4em;
+    height: 17px;
+}
 .txt_logo small {color: #c25d2d;font-size: 40.99px;line-height: 1em;}
 .txt_logo big {color: #c25d2d;font-size: 72.08px;line-height: 0.65em;}
 .txt_logo p {font-size: 23.95px;line-height: 0.9em;}
