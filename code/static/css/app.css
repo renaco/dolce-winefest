@@ -264,10 +264,10 @@ form.custom .custom.checkbox.checked {
 .cont_terminos a:hover {
     text-decoration: none;}
 .cont_terminos h3 {
-    margin: 1.6em 0 0;
+    margin: 1.2em 0 0.8em;
     font-size: 1.1em;
     font-weight: normal;
-    color: #959595;
+    color: #6c6c6c;
     line-height: 0.7em;
 }
 .head_term {
