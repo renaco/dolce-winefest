@@ -12,7 +12,6 @@ class Add(MethodView, RequestHandler):
     def post(self):
 
         if settings.XSRF_COOKIES:
-            logging.error('not csrf_protect')
             csrf_protect('home')
 
         comment = request.form['comment']
