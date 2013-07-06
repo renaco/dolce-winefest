@@ -2,7 +2,7 @@ import logging
 import settings
 
 from flask.views import MethodView
-from flask import request, redirect, url_for
+from flask import request, redirect, url_for, session
 
 from models import User, Department
 from controllers import (RequestHandler,
@@ -15,13 +15,16 @@ from forms import RegisterForm
 class Register(MethodView, RequestHandler):
 
     def get(self):
-        data = {'title': 'Formulario',
-                'departments': Department.query.all()}
+        if not 'comment' in session:
+            return redirect(url_for('home'))
+        data = {'departments': Department.query.all()}
         if settings.XSRF_COOKIES:
             data['csrf_token'] = generate_csrf_token()
         return self.render_template('form.html', **data)
 
     def post(self):
+
+
         if settings.XSRF_COOKIES:
             csrf_protect()
         form = RegisterForm(request.form)
@@ -43,7 +46,7 @@ class Register(MethodView, RequestHandler):
                 logging.error(exc)
                 db_session.rollback()
                 db_session.remove()
-                self.get()
+                return self.get()
             else:
                 db_session.remove()
                 return redirect(url_for('thanks'))

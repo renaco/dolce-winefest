@@ -50,6 +50,10 @@ class RegisterForm(Form):
     email_exists = BooleanField(widget=HiddenInput())
     dni_exists = BooleanField(widget=HiddenInput())
 
+    def validate_dni_exists(self, field):
+        if field.data:
+            raise ValidationError()
+
     def validate_email_exists(self, field):
         if field.data:
             raise ValidationError()
