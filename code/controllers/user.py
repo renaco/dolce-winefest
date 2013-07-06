@@ -7,7 +7,7 @@ from flask import request, redirect, url_for, session
 
 from models import User, Department
 from controllers import (RequestHandler,
-                         generate_csrf_token, csrf_protect, authenticated)
+                         generate_csrf_token, csrf_protect)
 
 from database import db_session
 from forms import RegisterForm
@@ -15,31 +15,19 @@ from forms import RegisterForm
 
 class Register(MethodView, RequestHandler):
 
-    #@authenticated
     def get(self):
-
-
-        #print "xxx"
-
-        #print user
-
-        print session
 
         data = {'departments': Department.query.all()}
         if settings.XSRF_COOKIES:
             data['csrf_token'] = generate_csrf_token('register')
 
-        #print session
-
         return self.render_template('form.html', **data)
 
-    #@authenticated
     def post(self):
 
         if 'user_id' in session:
-            #session.pop('user_id')
+            logging.info('have user')
             return redirect(url_for('thanks'))
-
 
         if settings.XSRF_COOKIES:
             csrf_protect('register')
@@ -50,12 +38,9 @@ class Register(MethodView, RequestHandler):
         form.dni_exists.data = bool(User.query.filter_by(
             dni=form.dni.data).count())
         form.cod_dpto.query = Department.query.all()
-        form.comment.data = session.pop('comment')
+        form.comment.data = session.get('comment')
 
         if form.validate():
-
-            #user  = User.query.get(session.get('user_id'))
-
             user = User()
             form.populate_obj(user)
             user.cod_dpto = form.cod_dpto.data.id

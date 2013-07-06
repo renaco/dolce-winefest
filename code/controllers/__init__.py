@@ -21,7 +21,6 @@ def authenticated(f):
 def csrf_protect(action=''):
     if request.method == "POST":
         token = session.pop('%s_csrf_token' % action, None)
-        #token = session.get('%s_csrf_token' % action)
         if not token or token != request.form.get('_csrf_token'):
             logging.error('403')
             abort(403)
