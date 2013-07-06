@@ -94,6 +94,9 @@ input:-ms-placeholder {
     background-image: url("../img/sprite.png");
     background-repeat: no-repeat;
 }
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;}
 .cont_form .custom.dropdown {
     padding-left: 5px !important;}
 .cont_form select {padding-left: 0 !important;border: 2px solid #c5c5c5;}
@@ -212,7 +215,6 @@ form.custom .custom.checkbox.checked {
 #terms footer {background: #f6f7f9 none;height: 82px;display: none;}
 #terms #wrapp {
     border: 0 none;
-    height: 865px;
     color: #ffffff;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -220,10 +222,10 @@ form.custom .custom.checkbox.checked {
     box-shadow: 0 0 0 0;
     -moz-box-shadow: 0 0 0 0;
     -webkit-box-shadow: 0 0 0 0;
-    padding: 37px 21px;
+    padding: 10px 21px;
     background: transparent;
 }
-#terms #wrapp h2 { font-size: 2.5em;
+#terms #wrapp h2 { font-size: 2.6em;
     color: #c25d2d;
     font-family: 'BebasNeueRegular'; }
 .terminos .btn_regresar {
@@ -243,33 +245,35 @@ form.custom .custom.checkbox.checked {
 .terminos .btn_regresar:hover {
     background-position: -59px -1147px;
 }
-
-#wrapp .cont_terminos p, #wrapp .cont_terminos li {
+.cont_terminos p, #wrapp .cont_terminos li {
     font-weight: normal;
     color: #6e6e6e;
     line-height: 1.2em;
     padding: 0 0 0.7em;
     font-size: 15px;}
-#wrapp .cont_terminos ul {
+.cont_terminos ul {
     padding: 0;
 }
-#wrapp .cont_terminos li {
+.cont_terminos li {
     list-style: none;
     padding: 0 0 0 37px;
     background: url("../img/sprite.png") -20px -2737px no-repeat;}
-#wrapp .cont_terminos a {
+.cont_terminos a {
     text-decoration: underline;
     color: inherit;}
-#wrapp .cont_terminos a:hover {
+.cont_terminos a:hover {
     text-decoration: none;}
-#wrapp .cont_terminos h3 {
+.cont_terminos h3 {
     margin: 1.6em 0 0;
-    font-size: 1.3em;
-    font-weight: 700;
-    color: #4f3216;
+    font-size: 1.1em;
+    font-weight: normal;
+    color: #959595;
     line-height: 0.7em;
 }
-
+.head_term {
+    width: 808px;
+    height: 139px;
+    background: url("../img/bg_head.jpg");}
 
 
 
