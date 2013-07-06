@@ -22,6 +22,8 @@ class Register(MethodView, RequestHandler):
         if settings.XSRF_COOKIES:
             data['csrf_token'] = generate_csrf_token('register')
 
+        print session
+
         return self.render_template('form.html', **data)
 
     @nocomment
