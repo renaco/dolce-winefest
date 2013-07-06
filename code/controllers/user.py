@@ -17,6 +17,14 @@ class Register(MethodView, RequestHandler):
 
     def get(self):
 
+        if 'user_id' in session:
+            logging.info('have user')
+            return redirect(url_for('thanks'))
+
+        if not 'comment' in session:
+            logging.info('not comment')
+            return redirect(url_for('home'))
+
         data = {'departments': Department.query.all()}
         if settings.XSRF_COOKIES:
             data['csrf_token'] = generate_csrf_token('register')
@@ -28,6 +36,10 @@ class Register(MethodView, RequestHandler):
         if 'user_id' in session:
             logging.info('have user')
             return redirect(url_for('thanks'))
+
+        if not 'comment' in session:
+            logging.info('not comment')
+            return redirect(url_for('home'))
 
         if settings.XSRF_COOKIES:
             csrf_protect('register')
