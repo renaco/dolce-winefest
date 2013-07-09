@@ -28,8 +28,10 @@
 
             </div>
             <div class="descubre request"></div>
-            <form action="{{ url_for('add_comment') }}" id="formComment" method="post">
+            <form action="{{ url_for('form') }}" id="formComment" method="post">
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token }}">
+                
+                <input type="hidden" name="action" value="add_comment">
 
                 <div class="bg_radious">
                     <textarea name="comment" id="" placeholder="140 Caracteres..." ></textarea>
