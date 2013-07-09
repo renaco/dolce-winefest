@@ -1,4 +1,7 @@
 {% extends "base_fblogin.html" %}
+        {% block setsize %}
+            FB.Canvas.setAutoGrow();
+        {% endblock setsize %}
 
 {% block content %}
 <div class="fan">
