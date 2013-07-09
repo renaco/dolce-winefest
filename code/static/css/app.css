@@ -115,7 +115,7 @@ input:-ms-placeholder {
 .btn_participar:hover { background-position: 0 -162px; }
 .btn_participar_off { background-position: 0 -216px; position: relative;}
 .btn_ingresar { height: 54px; background-position: 0 -518px; margin-top: 5px; margin-bottom: 20px;}
-.btn_ingresar:hover { background-position: 0 -572px;}
+.fan a:hover .btn_ingresar { background-position: 0 -572px;}
 .formulario {background-image: url("../img/formulario.png");width: 574px;height: 42px;margin-top: 32px}
 .cont_form {width: 284px;background-image: none; margin-bottom: 30px;}
 .cont_form input,
