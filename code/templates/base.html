@@ -60,8 +60,12 @@
 
         <script>
         window.fbAsyncInit = function() {
-            FB.Canvas.setAutoGrow();
+        {% block setsize %}
+            FB.Canvas.setSize();
+        {% endblock setsize %}
+
         };
+         
         (function() {
             var e = document.createElement('script');
             e.async = true;
