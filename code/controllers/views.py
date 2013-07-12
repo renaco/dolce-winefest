@@ -4,6 +4,8 @@ from flask.views import MethodView
 from controllers import (RequestHandler,
                          generate_csrf_token,
                          session)
+from flask import Response
+from models import User
 
 
 class Home(MethodView, RequestHandler):
@@ -64,3 +66,29 @@ class NoFan(MethodView, RequestHandler):
 
     def get(self):
         return self.post()
+
+
+class Download(MethodView, RequestHandler):
+
+    def get(self):
+        users = User.query.all()
+        generate = '%s,%s,%s,%s,%s,%s,%s \n' % (
+            'first_name',
+            'last_name',
+            'dni',
+            'email',
+            'created_at',
+            'department',
+            'comment'
+        )
+        for user in users:
+            generate += '%s,%s,%s,%s,%s,%s,%s \n' % (
+                user.first_name,
+                user.last_name,
+                user.dni,
+                user.email,
+                user.created_at,
+                user.department.name,
+                user.comment
+            )
+        return Response(generate, mimetype='text/csv')
