@@ -1,6 +1,6 @@
 DEBUG = False
 DATABASE_DEBUG = DEBUG
-DATABASE_DSN = 'mysql://<root>:<passwd>@<hostname>/<database>'
+DATABASE_DSN = 'mysql://user_winefest:dw1n3fest@localhost/dolcegusto_winefest'
 
 XSRF_COOKIES = True
 SECRET_KEY = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
@@ -20,9 +20,11 @@ FACEBOOK_ACCESS_TOKEN = 'https://graph.facebook.com/oauth/access_token'
 
 STATIC_URL = '/static/'
 HOME_URL = ''
-P3P_COMPACT = 'policyref="%s%sP3P/p3p.xml", CP="NON DSP COR CURa TIA"' % (
-    DOMAIN_URL, STATIC_URL)
+#P3P_COMPACT = 'policyref="%s%sP3P/p3p.xml", CP="NON DSP COR CURa TIA"' % (
+#    DOMAIN_URL, STATIC_URL)
 
+P3P_COMPACT = 'policyref="%s%sP3P/p3p.xml", CP="NOI ADM DEV PSAi COM NAV OUR OTR STP IND DEM"' % (
+    DOMAIN_URL, STATIC_URL)
 try:
     from local_settings import *
 except ImportError:

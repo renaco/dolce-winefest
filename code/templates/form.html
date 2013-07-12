@@ -7,6 +7,9 @@
             <form action="{{ url_for('form') }}" class="custom" id="form_registro" method="post">
 
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token }}">
+                
+                
+                <input type="hidden" name="comment" value="{{ comment }}">
 
                 <div class="cont_form request">
                     <label>nombre Y APELLIDO</label>
