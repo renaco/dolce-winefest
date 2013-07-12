@@ -44,7 +44,9 @@ class Winners(MethodView, RequestHandler):
     def get(self):
         return self.render_template('winners.html',
                                     title='Ganadores')
-
+    def post(self):
+        return self.render_template('winners.html',
+                                    title='Ganadores')
 
 class Fan(MethodView, RequestHandler):
 
