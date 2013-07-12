@@ -1,71 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Ganadora</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
-<style>
-    html, body, img{
-        border: 0;
-        margin:0 ;
-        padding: 0;
-    }
-    .ganadores{
-        width: 810px;
-        height: 810px;
-        background: url({{ url_for('static', filename='img/ganadores1.jpg') }}) no-repeat top left; position: relative;
-    }
-     .ganadores span{
-         font-size: 25px;
-         font-family: 'BebasNeueRegular';
-    }
-    .ganadores span#texto1{
-        margin-top: 160px;
-        margin-left: 500px;
-        position: absolute;
-   }
-    .ganadores span#texto2{
-        margin-top: 200px;
-        margin-left: 450px;
-        position: absolute;
-   }
-</style>
-</head>
-<body >
-<div id="fb-root"></div>
-<script>
-    window.fbAsyncInit = function() {
-        FB.init({appId: '{{ facebook_app_id }}', status: true, cookie: true, xfbml: true});
-{#        FB.Event.subscribe('auth.login', function(response) {#}
-{#            //alert('recargando pagina');#}
-{#            window.location.reload();#}
-{#        });#}
-        FB.Canvas.setAutoGrow();
-        FB.getLoginStatus(function(response) {
-            if (response.status === 'connected') {
-                // connected
-                if ('{{ redirect_if_connected }}') {
-                window.location = '{{ redirect_if_connected }}';
-                }
-            }else {
-                // not_logged_in or not_authorized
-                if ('{{ redirect_if_not_connected }}') {
-                    window.location = '{{ redirect_if_not_connected }}';
-                }
-            }
-        });
-    };
+{% extends "base_fblogin.html" %}
+{% block content %}
+    <p>&nbsp <br></p>
+    <div class="big_text">
+        <div class="txt_logo bebas request text-center">
+        </div>
+    </div>
+    <p>&nbsp <br></p>
+    <p>&nbsp <br></p>
+    <div class="nofan">
+        <img src="{{ url_for('static', filename='img/ganadores.png') }}"  alt=""/>
+    </div>
+    <p>&nbsp <br></p>
+{% endblock %}
 
-    (function() {
-        var e = document.createElement('script');
-        e.type = 'text/javascript';
-        e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
-        e.async = true;
-        document.getElementById('fb-root').appendChild(e);
-    }());
-</script>
-<div class="ganadores">
-    <span id="texto1" >Ganadora:</span>
-    <span id="texto2" >Clemen Enriquez Taipe</span>
-</div>
-</body>
-</html>
+<img src="{{ url_for('static', filename='img/bg_footer.png') }}"  alt=""/>
+
+{% block scripts %}
+
+
+{% endblock scripts %}

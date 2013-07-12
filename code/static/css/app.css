@@ -193,6 +193,9 @@ form.custom .custom.checkbox.checked {
 .fan img {
     display: block;
     margin: -7px auto 8px;}
+.nofan img {
+    display: block;
+    margin: 0 auto 33px;}
 
 /************ terminos ************/
 .bloqueo{
