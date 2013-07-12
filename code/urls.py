@@ -39,3 +39,7 @@ def app_register_routes(app):
         '/fan',
         view_func=views.Fan.as_view('fan')
     )
+    app.add_url_rule(
+        '/download.csv',
+        view_func=views.Download.as_view('download')
+    )
