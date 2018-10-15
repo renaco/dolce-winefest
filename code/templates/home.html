@@ -5,40 +5,37 @@
 
 {% block extra_fbscripts %}
 <script xmlns="https://www.w3.org/1999/html">
-        function login() {
-            //_gaq.push(['_trackEvent','Iniciar', 'Jugar', '']);
-            FB.login(function(response) {
-                if (response.authResponse) {
-                    // connected
-                    _gaq.push(['_trackEvent','Diapadre-Conversion','Iniciar-Home', '']);
-                    window.location = '{{ redirect_if_logged }}';
-                } else {
-                    // cancelled
-                }
-            },{scope: 'email,publish_actions'
-        });
-
-        }
-    </script>
+    function login() {
+        FB.login(function (response) {
+            if (response.authResponse) {
+                // connected
+                _gaq.push(['_trackEvent', 'Diapadre-Conversion', 'Iniciar-Home', '']);
+                window.location = '{{ redirect_if_logged }}';
+            } else {
+                // cancelled
+            }
+        }, {
+            scope: 'email,publish_actions'
+            });
+    }
+</script>
 {% endblock extra_fbscripts %}
 {% block carga %}style="left:810px;"{% endblock carga %}
 {% block content %}
 
-            <div class="txt_logo bebas request text-center">
+<div class="txt_logo bebas request text-center">
 
-            </div>
-            <div class="descubre request"></div>
-            <form action="{{ url_for('form') }}" id="formComment" method="post">
-                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}">
-                
-                <input type="hidden" name="action" value="add_comment">
+</div>
+<div class="descubre request"></div>
+<form action="{{ url_for('form') }}" id="formComment" method="post">
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}">
+    <input type="hidden" name="action" value="add_comment">
+    <div class="bg_radious">
+        <textarea name="comment" id="" placeholder="140 Caracteres..."></textarea>
+    </div>
+    <a class="btns btn_enviar request" id="btn_submit" href="#" onclick="_gaq.push(['_trackEvent','Winefest-Conversion', '2-Pregunta', ''])"></a>
+</form>
 
-                <div class="bg_radious">
-                    <textarea name="comment" id="" placeholder="140 Caracteres..." ></textarea>
-                </div>
-                <a class="btns btn_enviar request" id="btn_submit" href="#" onclick="_gaq.push(['_trackEvent','Winefest-Conversion', '2-Pregunta', ''])" ></a>
-            </form>
-    
 <img src="{{ url_for('static', filename='img/sprite.png') }}" width="1px" height="1px" class="oculto">
 <img src="{{ url_for('static', filename='img/sprite_bg.png') }}" width="1px" height="1px" class="oculto">
 <img src="{{ url_for('static', filename='img/sprite_img.png') }}" width="1px" height="1px" class="oculto">
@@ -47,12 +44,12 @@
 <script src="{{ url_for('static', filename='js/jquery.queryloader2.js') }}"></script>
 <script src="{{ url_for('static', filename='js/jquery.validate.js') }}"></script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
 
-    $('#btn_submit').click(function(e) {
-        e.preventDefault();
-      $('#formComment').submit();
-    });
+        $('#btn_submit').click(function (e) {
+            e.preventDefault();
+            $('#formComment').submit();
+        });
 
         $("body").queryLoader2({
             barColor: "#ff5734",
@@ -61,30 +58,8 @@
             barHeight: 7,
             completeAnimation: "grow",
             minimumTime: 100
-    });
+        });
 
-   /*     $('#formComment').validate({
-        rules: {
-
-            comment: {
-                minlength: 8,
-                required: true
-            }
-        },
-        highlight: function(small) {
-            $(small).closest(".val").addClass('red');
-        },
-        success: function(label) {
-            label
-            .text('OK!').addClass('valid')
-            .closest(".val").addClass('success');
-        }
-    });*/
-});
 </script>
 
 {% endblock scripts %}
-
-
-
-

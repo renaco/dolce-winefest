@@ -4,7 +4,9 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" xmlns="https://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" xmlns="https://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" xmlns="https://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" xmlns="https://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" xmlns="https://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml">
+<!--<![endif]-->
 
 <head>
     <meta charset="utf-8" />
@@ -13,8 +15,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/foundation.css') }}" />
-
-
 
     <!--[if IE 8]>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/ie8-grid-foundation-4.css') }}" />
@@ -27,8 +27,8 @@
 	<![endif]-->
     <script>
         document.write('<script src=' +
-                ('__proto__' in {} ? '{{ url_for('static', filename='js/vendor/jquery') }}' : '{{ url_for('static', filename='js/vendor/jquery') }}') +
-                '.js><\/script>')
+            ('__proto__' in {} ? '{{ url_for('static', filename='js / vendor / jquery') }}' : '{{ url_for('static', filename='js / vendor / jquery') }}') +
+            '.js><\/script>')
     </script>
 
     <script type="text/javascript">
@@ -37,7 +37,7 @@
         _gaq.push(['_setAccount', 'UA-39434613-2']);
         _gaq.push(['_trackPageview']);
 
-        (function() {
+        (function () {
             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
@@ -46,11 +46,9 @@
 
 </head>
 
-
-
 <body>
-<div id="fb-root"></div>
-        <script>(function(d, s, id) {
+    <div id="fb-root"></div>
+    <script>(function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
             js = d.createElement(s); js.id = id;
@@ -58,21 +56,21 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
 
-        <script>
-        window.fbAsyncInit = function() {
-        {% block setsize %}
+    <script>
+        window.fbAsyncInit = function () {
+            {% block setsize %}
             FB.Canvas.setSize();
-        {% endblock setsize %}
+            {% endblock setsize %}
 
         };
-         
-        (function() {
+
+        (function () {
             var e = document.createElement('script');
             e.async = true;
             e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
             document.getElementById('fb-root').appendChild(e);
         }());
-        </script>
+    </script>
     {% block top_scripts %}{% endblock top_scripts %}
     <div class="main" {% block carga %}{% endblock carga %}>
         <div class="row">
@@ -81,8 +79,8 @@
                 {% block content %}{% endblock content %}
                 <div class="footer request"></div>
             </div>
-		</div>
-	</div>
+        </div>
+    </div>
 
     <iframe class="contTerminos" id="term"></iframe>
 
@@ -101,17 +99,18 @@
 
     <script type="text/javascript">
 
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-39434613-2']);
-      _gaq.push(['_trackPageview']);
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-39434613-2']);
+        _gaq.push(['_trackPageview']);
 
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
 
     </script>
 
 </body>
+
 </html>
